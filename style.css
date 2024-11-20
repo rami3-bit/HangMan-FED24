@@ -1,0 +1,60 @@
+body {
+background-color: white;
+font-family: 'Caveat', cursive;
+}
+
+h1  {
+	text-align: center;
+	font-size: 8rem;
+}
+
+.main-menu {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.username {
+	display: flex;
+	justify-content: center;
+	padding: 2em;
+
+}
+
+.difficulty-selection, button {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+	padding: 2em;
+	background-color: ;
+}
+
+.start-section, button {
+	display: flex;
+	justify-content: center;
+}
+
+/*buttons*/
+
+button {
+	border-radius: 0.5em;
+	cursor: pointer
+	
+
+}
+button:hover{
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
