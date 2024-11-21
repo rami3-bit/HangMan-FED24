@@ -1,3 +1,4 @@
+@import url(https://fonts.google.com/share?selection.family=Chewy);
 
 * {
     margin: 0;
@@ -6,9 +7,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+   /* font-family:;*/
     font-size: 16px; 
-    background-image: url('/images/body\ background.jpg\ 1.jpg')
+    background-image: url('/images/gif.gif')
 }
 
 /* här är  för spelet */
@@ -33,6 +34,24 @@ body {
     position: relative; 
    
 }
+
+.leaderboard-btn {
+    position: relative;
+    background-color: #b6df10;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7em;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 3em;
+    width: auto;
+    height: auto;
+  }
+  
+  .leaderboard-btn:hover {
+    background-color: #213c22;
+  }
 
 /* Positioning för "Mode" */
 .mode {
@@ -62,10 +81,6 @@ b {color: green;} /* för life och easy mode*/
     margin-bottom: 1em;
 }
 
-.hangman h1 {
-    margin-bottom: 0.6em;
-    font-size: 2rem;
-}
 
 .hang-image {
     max-width: 120px; 
@@ -109,8 +124,8 @@ button {
     height: 2.5em;
     border-radius: 5px;
     border: none;
-    background-color: rgb(10, 23, 89);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     font-size: 1em;
     text-align: center;
     text-transform: uppercase;
@@ -121,7 +136,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(176, 180, 41);
+    background-color: rgb(173, 159, 78);
 }
 
 
