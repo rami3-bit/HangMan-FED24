@@ -8,11 +8,11 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 16px; 
+    background-image: url('/images/body\ background.jpg\ 1.jpg')
 }
 
-/* Behållare för hela spelet */
+/* här är  för spelet */
 .game-container {
-    background-color: navy;
     width: 100vw;
     height: 92vh;
     display: flex;
@@ -20,9 +20,9 @@ body {
     align-items: center;
 }
 
-/* Stil för spelet */
+
 .game {
-    background-color: #fff;
+    background-image: url('/images/background_664601-2392.avif');
     width: 56em; 
     height: 29.5em; 
     padding: 1.25em;
@@ -30,11 +30,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; /* För att positionera "Mode" och "Life" */
+    position: relative; 
    
 }
 
-/* Positionering för "Mode" */
+/* Positioning för "Mode" */
 .mode {
     position: absolute;
     top: 0.5em; 
@@ -44,7 +44,7 @@ body {
     font-weight: bold;
 }
 
-/* Positionering för "Life" */
+/* Positioning för "Life" */
 .life {
     position: absolute;
     top: 0.5em; 
@@ -53,11 +53,10 @@ body {
     font-size: 1rem;
     font-weight: bold;
 }
-b{
-    color: green;
-}
 
-/* Sektion för Hangman och rubriken */
+b {color: green;} /* för life och easy mode*/
+
+
 .hangman {
     text-align: center;
     margin-bottom: 1em;
@@ -78,7 +77,7 @@ b{
     margin-bottom: 1.2em;
 }
 
-/* Stil för bokstäverna */
+
 .word-display {
     display: flex;
     justify-content: center;
@@ -94,7 +93,6 @@ b{
     font-size: 1.5rem;
 }
 
-/* Stil för tangentbordet */
 .keyboard {
     display: flex;
     align-items: center;
@@ -102,9 +100,10 @@ b{
     flex-wrap: wrap;
     gap: 0.5em;
     margin-bottom: 1.25em;
+    
 }
 
-/* Grundstil för knappar */
+
 button {
     width: 3em;
     height: 2.5em;
@@ -124,6 +123,27 @@ button {
 button:hover {
     background-color: rgb(176, 180, 41);
 }
+
+
+.game-control {
+    display: flex;
+    gap: 1em;
+}
+
+.reset-btn, .quit-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(55, 222, 21);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-btn:hover, .quit-btn:hover {
+    background-color: red;
+}
+
 
 .game-over {
     text-align: center;
