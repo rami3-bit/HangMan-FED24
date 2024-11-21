@@ -1,0 +1,105 @@
+/* General Styling */
+body {
+    margin: 0;
+	font-family: "Chewy", system-ui;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	height: auto;
+    width: 400px;
+    text-align: center;
+    border: 2px solid black;
+    padding: 350px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+/* Leaderboard Styling */
+.leaderboard {
+	justify-content: flex-start;
+    width: 60%;
+    text-align: center;
+    background-color: #ddd;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Title Styling */
+.title {
+    font-size: 6rem;
+    margin: 20px 0;
+}
+
+/* Input Styling */
+.player-name {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons Container */
+.difficulty-buttons {
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+/* Buttons Styling */
+.btn {
+    padding: 19px 40px;
+    border: none;
+    border-radius: 5px;
+	border-color: black;
+    color: rgb(65, 61, 61);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.easy {
+    background-color: #29ee30;
+	border-style: solid;
+	border-color: black;
+}
+
+.btn.medium {
+    background-color: #ffeb3b;
+	border-style: solid;
+	border-color: black;
+}
+
+.btn.hard {
+    background-color: #f53427;
+	border-style: solid;
+	border-color: black;
+}
+
+.btn.start {
+    background-color: #8e44ad;
+	border-style: solid;
+	border-color: black;
+}
+
+/* Hover Effects */
+.btn:hover {
+    opacity: 0.8;
+}
+
+.chewy-regular {
+	font-family: "Chewy", system-ui;
+	font-weight: 400;
+	font-style: normal;
+  }
+  
