@@ -38,7 +38,7 @@ body {
 .mode {
     position: absolute;
     top: 0.5em; 
-    right: 1em; 
+    left: 1em; 
     color: navy;
     font-size: 1rem;
     font-weight: bold;
@@ -48,7 +48,7 @@ body {
 .life {
     position: absolute;
     top: 0.5em; 
-    left: 1em; 
+    right: 1em; 
     color: navy;
     font-size: 1rem;
     font-weight: bold;
