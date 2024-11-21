@@ -125,4 +125,11 @@ button:hover {
     background-color: rgb(176, 180, 41);
 }
 
+.game-over {
+    text-align: center;
+    margin-top: 1.25em;
+}
 
+.hidden {
+    display: none;
+}
