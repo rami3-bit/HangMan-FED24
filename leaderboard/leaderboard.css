@@ -10,8 +10,9 @@
 	border: 0.2em solid black;
 	width: 22em;
 	margin: 0.5em;
-	background-color: rgb(233, 255, 255);
+	background-image: url("container_background.jpg");
 	border-radius: 0.3em;
+
 }
 
 .leaderboard-close-button {
@@ -42,6 +43,7 @@
 .leaderboard-sort-button {
 	border-radius: 0.3em;
 	font-family: "Chewy";
+	background-color: #fff6c5;
 }
 
 .leaderboard-sort-button:hover, #leaderboard-button:hover {
@@ -59,6 +61,7 @@
 	font-size: large;
 	margin: 0.5em;
 	border-radius: 0.3em;
+	background-color: #fff6c5;
 }
 
 .hidden {
