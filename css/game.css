@@ -1,0 +1,59 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px; 
+}
+
+/* Behållare för hela spelet */
+.game-container {
+    background-color: navy;
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stil för spelet */
+.game {
+    background-color: #fff;
+    width: 56em; 
+    height: 29.5em; 
+    padding: 1.25em;
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* För att positionera "Mode" och "Life" */
+   
+}
+
+/* Positionering för "Mode" */
+.mode {
+    position: absolute;
+    top: 0.5em; 
+    right: 1em; 
+    color: navy;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Positionering för "Life" */
+.life {
+    position: absolute;
+    top: 0.5em; 
+    left: 1em; 
+    color: navy;
+    font-size: 1rem;
+    font-weight: bold;
+}
+b{
+    color: green;
+}
+
