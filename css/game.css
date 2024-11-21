@@ -1,4 +1,4 @@
-@import url(https://fonts.google.com/share?selection.family=Chewy);
+
 
 * {
     margin: 0;
@@ -7,9 +7,9 @@
 }
 
 body {
-   /* font-family:;*/
+    font-family: cursive;
     font-size: 16px; 
-    background-image: url('/images/gif.gif')
+    background-image: url('/images/body\ background.jpg\ 1.jpg')
 }
 
 /* här är  för spelet */
@@ -37,7 +37,7 @@ body {
 
 .leaderboard-btn {
     position: relative;
-    background-color: #b6df10;
+    background-color: grey;
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
@@ -47,6 +47,7 @@ body {
     margin-bottom: 3em;
     width: auto;
     height: auto;
+    font-family: cursive;
   }
   
   .leaderboard-btn:hover {
@@ -132,7 +133,7 @@ button {
     font-weight: bolder;
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    
+    font-family: cursive;
 }
 
 button:hover {
