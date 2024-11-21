@@ -21,27 +21,22 @@ body {
     border: 2px solid black;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     background-color: white;
+	border-radius: 10px;
 }
 
 /* Leaderboard Styling */
-.leaderboard {
-	justify-content: flex-start;
-    width: 30%;
-    text-align: center;
+.btn.leader {
     background-color: #ddd;
-    padding: 10px;
-    font-weight: bold;
-	margin-top: 3px;
-	margin-bottom: 5em;
 	border-radius: 5px;
 	border: solid black 2px;
+	margin-bottom: 50px;
 }
 
 /* Title Styling */
 .title {
 	font-family: "Chewy", system-ui;
     font-size: 6rem;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 /* Input Styling */
@@ -51,8 +46,7 @@ body {
     width: 80%;
     padding: 10px;
     font-size: 1.4rem;
-	margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     border: 2px solid #ccc;
     border-radius: 5px;
 }
@@ -66,13 +60,13 @@ body {
 /* Buttons Styling */
 .btn {
 	font-family: "Chewy", system-ui;
-    padding: 19px 40px;
+    padding: 15px 50px;
 	margin: 10px;
     border: none;
     border-radius: 5px;
 	border-color: black;
     color: rgb(65, 61, 61);
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
