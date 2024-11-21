@@ -94,3 +94,35 @@ b{
     font-size: 1.5rem;
 }
 
+/* Stil för tangentbordet */
+.keyboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 1.25em;
+}
+
+/* Grundstil för knappar */
+button {
+    width: 3em;
+    height: 2.5em;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(10, 23, 89);
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    
+}
+
+button:hover {
+    background-color: rgb(176, 180, 41);
+}
+
+
