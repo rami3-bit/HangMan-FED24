@@ -57,3 +57,19 @@ b{
     color: green;
 }
 
+/* Sektion för Hangman och rubriken */
+.hangman {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.hangman h1 {
+    margin-bottom: 0.6em;
+    font-size: 2rem;
+}
+
+.hang-image {
+    max-width: 120px; 
+    height: auto;
+}
+
