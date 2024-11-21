@@ -7,15 +7,25 @@
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
     font-family: cursive;
     font-size: 16px; 
     background-image: url('/images/body\ background.jpg\ 1.jpg')
 }
 
+.header {
+	margin-bottom: 10em;
+}
+
+
 /* här är  för spelet */
 .game-container {
-    width: 100vw;
-    height: 92vh;
+	border: solid black 2px;
+	height: 800px;
+    width: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,16 +37,18 @@ body {
     width: 56em; 
     height: 29.5em; 
     padding: 1.25em;
+	margin-top: 6em;
     border-radius: 0.6em;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative; 
-   
+	gap: 3em;
 }
 
 .leaderboard-btn {
-    position: relative;
+    position: absolute;
+	top: -12em;
     background-color: grey;
     color: rgb(255, 255, 255);
     border: none;
@@ -44,7 +56,6 @@ body {
     padding: 0.7em;
     cursor: pointer;
     font-size: 1rem;
-    margin-bottom: 3em;
     width: auto;
     height: auto;
     font-family: cursive;
@@ -57,18 +68,18 @@ body {
 /* Positioning för "Mode" */
 .mode {
     position: absolute;
-    top: 0.5em; 
-    left: 1em; 
+    top: -12em; 
+    left: -2em; 
     color: navy;
     font-size: 1rem;
     font-weight: bold;
 }
 
 /* Positioning för "Life" */
-.life {
+.mistakes {
     position: absolute;
-    top: 0.5em; 
-    right: 1em; 
+    top: -12em; 
+    right: -2em; 
     color: navy;
     font-size: 1rem;
     font-weight: bold;
