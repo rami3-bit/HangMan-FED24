@@ -1,7 +1,5 @@
 /* Global settings */
 
-  
-
 body {
 	background-color: white;
 	font-family: "Chewy", system-ui;
@@ -48,15 +46,22 @@ button {
 	border-radius: 0.5em;
 	cursor: pointer;
 	padding: 0.8em 2em; 
-	border: none;
-	background-color: #4CAF50;
-	color: white;
-	font-size: 1rem; 
+	color: black;
+	font-size: rem; 
 	font-family: inherit;
+	height: 4em;
+	width: 12em;
 }
 
+.leaderboard-container {
+    display: flex;
+    justify-content: center;
+   
+}
+
+
 .easy {
-	background-color: green;
+	background-color: rgb(9, 190, 9);
 }
 
 .medium {
@@ -66,6 +71,38 @@ button {
 
 .hard {
 	background-color: red;
+}
+
+.start {
+	background-color: blueviolet;
+}
+
+.leaderboard-container > .leaderboard-button {
+    background-color: lightgray;
+    color: solid black;
+    padding: 10px 20px; 
+    font-size: 20px;
+	width: 12rem;
+	height:3em;
+	margin: 2em;
+}
+
+.easy, .medium, .hard, .start {
+    font-size: 40px;
+    padding: 5px 10px;
+    width: 4em;
+    height: 2em;
+}
+
+input {
+width: 27rem;
+height :2rem;
+}
+
+#username {
+	font-size: 24px;
+	text-align: center;
+	font-family: inherit;
 }
 
 
