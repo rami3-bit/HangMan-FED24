@@ -1,0 +1,69 @@
+* {
+	box-sizing: border-box; margin: 0;
+}
+
+.leaderboard-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Chewy";
+	border: 0.2em solid black;
+	width: 22em;
+	margin: 0.5em;
+	background-image: url("container_background.jpg");
+	border-radius: 0.3em;
+
+}
+
+.leaderboard-close-button {
+	align-self: flex-end;
+	background-color: rgb(236, 161, 161);
+	border-radius: 0.2em;
+
+}
+
+.leaderboard-li {
+	margin: 1em 0.3em 1em 0;
+}
+
+.leaderboard-sort-button-container{
+	display: flex;
+	justify-content: space-around;
+	width: 20em;
+	margin: 1em 0 1em 0;
+
+}
+
+.leaderboard-sort-button, .leaderboard-close-button, #leaderboard-button {
+	cursor: pointer;
+	transition: all;
+	transition-duration: 1s;
+}
+
+.leaderboard-sort-button {
+	border-radius: 0.3em;
+	font-family: "Chewy";
+	background-color: #fff6c5;
+}
+
+.leaderboard-sort-button:hover, #leaderboard-button:hover {
+	background-color: #FFD700;
+}
+
+.leaderboard-close-button:hover {
+	background-color: crimson;
+}
+
+#leaderboard-button {
+	font-family: "Chewy";
+	width: 7em;
+	padding: 0.2em;
+	font-size: large;
+	margin: 0.5em;
+	border-radius: 0.3em;
+	background-color: #fff6c5;
+}
+
+.hidden {
+	display: none;
+}
