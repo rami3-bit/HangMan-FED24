@@ -8,7 +8,7 @@
 	align-items: center;
 	font-family: "Chewy";
 	border: 0.2em solid black;
-	width: 22em;
+	width: 70vw;
 	margin: 0.5em;
 	background-image: url("container_background.jpg");
 	border-radius: 0.3em;
@@ -28,7 +28,7 @@
 
 .leaderboard-sort-button-container{
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	width: 20em;
 	margin: 1em 0 1em 0;
 
