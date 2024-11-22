@@ -46,8 +46,7 @@ button {
 	border-radius: 0.5em;
 	cursor: pointer;
 	padding: 0.8em 2em; 
-	color: black;
-	font-size: rem; 
+	color: black; 
 	font-family: inherit;
 	height: 4em;
 	width: 12em;
@@ -79,7 +78,7 @@ button {
 
 .leaderboard-container > .leaderboard-button {
     background-color: lightgray;
-    color: solid black;
+    color: black;
     padding: 10px 20px; 
     font-size: 20px;
 	width: 12rem;

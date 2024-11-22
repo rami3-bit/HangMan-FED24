@@ -1,0 +1,1 @@
+const leaderBoardVy = document.querySelector(".leaderboard-button");
