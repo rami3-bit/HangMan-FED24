@@ -49,8 +49,8 @@ body {
 .leaderboard-btn {
     position: absolute;
 	top: -5.5em;
-    background-color: grey;
-    color: rgb(255, 255, 255);
+    background-color: rgb(167, 164, 164);
+    color: rgb(46, 37, 37);
     border: none;
     border-radius: 5px;
     padding: 0.7em;
@@ -136,7 +136,7 @@ button {
     border-radius: 5px;
     border: none;
     background-color: rgb(255, 255, 255);
-    color: #000000;
+    color: #4e4949;
     font-size: 1em;
     text-align: center;
     text-transform: uppercase;
@@ -163,7 +163,7 @@ button:hover {
     height: 2.5em;
     border-radius: 5px;
     background-color: rgb(55, 222, 21);
-    color: #fff;
+    color: #4e4949;
     cursor: pointer;
     transition: background-color 0.3s;
 }
