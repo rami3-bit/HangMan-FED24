@@ -1,17 +1,20 @@
 
-const leaderboard = document.querySelector('.leaderboard-container')
+const leaderboard = document.querySelector('.whole-leaderboard')
 const LeaderboardCloseButton = document.querySelector(`.leaderboard-close-button`)
-const LeaderboardButton = document.querySelector(`#leaderboard-button`)
+const LeaderboardHomeButton = document.querySelector(`#leaderboard-home-button`)
+const mainMenu = document.querySelector(`.main-menu`)
 
 
 // --------------------hide/show Leaderboard------------
 
-LeaderboardButton.addEventListener('click', () => {
+LeaderboardHomeButton.addEventListener('click', () => {
 	leaderboard.classList.remove('hidden')
+	mainMenu.classList.add(`hidden`)
 })
 
 LeaderboardCloseButton.addEventListener('click', () => {
 	leaderboard.classList.add('hidden')
+	mainMenu.classList.remove(`hidden`)
 })
 
 // --------------------------------

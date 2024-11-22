@@ -53,7 +53,7 @@ button {
 	width: 12em;
 }
 
-.leaderboard-container {
+.leaderboard-button-container {
     display: flex;
     justify-content: center;
    
@@ -77,7 +77,7 @@ button {
 	background-color: blueviolet;
 }
 
-.leaderboard-container > .leaderboard-button {
+.leaderboard-container > #leaderboard-home-button {
     background-color: lightgray;
     color: solid black;
     padding: 10px 20px; 
