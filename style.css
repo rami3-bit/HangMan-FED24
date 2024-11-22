@@ -71,7 +71,7 @@ body {
 .leaderboard-container > .leaderboard-button {
     background-color: lightgray;
     color: black;
-    padding: 10px 20px; 
+    padding: 10px; 
     font-size: 20px;
 	width: 12rem;
 	height:3em;
@@ -79,17 +79,11 @@ body {
 }
 
 .easy, .medium, .hard, .start {
-    font-size: 40px;
-    padding: 5px 10px;
-	
-		border-radius: 0.5em;
-		cursor: pointer;
-		padding: 0.8em 2em; 
-		color: black; 
-		font-family: inherit;
-		height: 4em;
-		width: 12em;
-	
+font-size: 40px;
+cursor: pointer;
+color: black; 
+font-family: inherit;
+width: 20rem;
 }
 
 .main-menu > input {
