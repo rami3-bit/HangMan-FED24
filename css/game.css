@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css2?family=Chewy&display=swap);
 
 * {
     margin: 0;
@@ -11,21 +11,21 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-    font-family: cursive;
+    font-family: chewy;
     font-size: 16px; 
-    background-image: url('/images/body\ background.jpg\ 1.jpg')
+  
 }
 
 .header {
-	margin-bottom: 10em;
+	margin-bottom: 3em;
 }
 
 
 /* här är  för spelet */
 .game-container {
 	border: solid black 2px;
-	height: 800px;
-    width: 1000px;
+	height: auto;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@ body {
 
 .leaderboard-btn {
     position: absolute;
-	top: -12em;
+	top: -5.5em;
     background-color: grey;
     color: rgb(255, 255, 255);
     border: none;
@@ -58,7 +58,7 @@ body {
     font-size: 1rem;
     width: auto;
     height: auto;
-    font-family: cursive;
+    font-family: chewy;
   }
   
   .leaderboard-btn:hover {
@@ -68,8 +68,8 @@ body {
 /* Positioning för "Mode" */
 .mode {
     position: absolute;
-    top: -12em; 
-    left: -2em; 
+    top: -5.5em; 
+    left: 1em; 
     color: navy;
     font-size: 1rem;
     font-weight: bold;
@@ -78,8 +78,8 @@ body {
 /* Positioning för "Life" */
 .mistakes {
     position: absolute;
-    top: -12em; 
-    right: -2em; 
+    top: -5.5em; 
+    right: 1em; 
     color: navy;
     font-size: 1rem;
     font-weight: bold;
@@ -90,7 +90,6 @@ b {color: green;} /* för life och easy mode*/
 
 .hangman {
     text-align: center;
-    margin-bottom: 1em;
 }
 
 
@@ -101,7 +100,7 @@ b {color: green;} /* för life och easy mode*/
 
 /* Sektion för ordet som ska gissas */
 .word {
-    margin-bottom: 1.2em;
+    margin-bottom: 0em;
 }
 
 
@@ -126,7 +125,7 @@ b {color: green;} /* för life och easy mode*/
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
-    margin-bottom: 1.25em;
+    margin-bottom: -1em;
     
 }
 
@@ -144,7 +143,8 @@ button {
     font-weight: bolder;
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: cursive;
+    font-family: chewy;
+    
 }
 
 button:hover {
@@ -155,6 +155,7 @@ button:hover {
 .game-control {
     display: flex;
     gap: 1em;
+
 }
 
 .reset-btn, .quit-btn {

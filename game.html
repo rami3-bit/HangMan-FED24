@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
     <link rel="stylesheet" href="css/game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="header"></div>
     <section>
         <div class="game-container">
             <div class="game">
-                <h3 class="mistakes">Mistakes: <b>0/6</b></h3>
-                <h3 class="mode">Mode: <b>Easy</b></h3>
+                <h3 class="mistakes">Mistakes: <b><span id="mistake-count">0</span>/6</b></h3>
+<h3 class="mode">Mode: <b><span id="game-mode">Easy</span></b></h3>
                 <button class="leaderboard-btn">Leaderboard</button>
 
                 
