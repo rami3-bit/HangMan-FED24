@@ -11,7 +11,6 @@
 	<!---Script--->
 	<script type="module" src="./javascript/script.js"></script>
 	<script type="module" src="./javascript/wordlist.js"></script>
-
 </head>
 <body>
 	<div class="header"></div>
@@ -19,7 +18,7 @@
         <div class="game-container">
             <div class="game">
                 <h3 class="mistakes">Mistakes:<b>
-				<span id="mistake-count">0</span>/6</b></h3>
+				<span id="Mistakes">0</span> / <span id="maxWrong">6</span></b></h3>
 				<h3 class="mode">Mode: <b><span id="game-mode">Easy</span></b></h3>
                 
 				<button class="leaderboard-btn">Leaderboard</button>
@@ -51,7 +50,7 @@
                     <!--<button>A</button><button>B</button><button>C</button><button>D</button><button>E</button><button>F</button><button>G</button><button>H</button><button>I</button><button>J</button><button>K</button><button>L</button><button>M</button><button>N</button><button>O</button><button>P</button><button>Q</button><button>R</button><button>S</button><button>T</button><button>U</button><button>V</button><button>W</button><button>X</button><button>Y</button><button>Z</button>-->
                 </div>
                 <div class="game-control">
-                    <button class="reset-btn" id="new-game-button">Reset</button>
+                    <button class="reset-btn" id="new-game-button" onclick="reset()">Reset</button>
                     <button class="quit-btn">Quit</button>
                 </div>
             </div>
