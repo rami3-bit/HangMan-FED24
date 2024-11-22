@@ -5,7 +5,7 @@ body {
 	font-family: "Chewy", system-ui;
 }
 /*h1*/
-h1 {
+.hangman-h1 {
 	text-align: center;
 	font-size: 8rem;
 }
@@ -42,15 +42,7 @@ h1 {
 }
 
 /* Buttons */
-button {
-	border-radius: 0.5em;
-	cursor: pointer;
-	padding: 0.8em 2em; 
-	color: black; 
-	font-family: inherit;
-	height: 4em;
-	width: 12em;
-}
+
 
 .leaderboard-container {
     display: flex;
@@ -89,11 +81,18 @@ button {
 .easy, .medium, .hard, .start {
     font-size: 40px;
     padding: 5px 10px;
-    width: 4em;
-    height: 2em;
+	
+		border-radius: 0.5em;
+		cursor: pointer;
+		padding: 0.8em 2em; 
+		color: black; 
+		font-family: inherit;
+		height: 4em;
+		width: 12em;
+	
 }
 
-input {
+.main-menu > input {
 width: 27rem;
 height :2rem;
 }
