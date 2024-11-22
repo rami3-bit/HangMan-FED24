@@ -1,3 +1,12 @@
+const keyboard=document.querySelector('.keyboard')
+
+//adding Keyboard
+for(let i=97; i<=122;i++){
+	const button=document.createElement("button")
+	button.classList.add("button")
+	button.innerText=String.fromCharCode(i)
+	keyboard.appendChild(button);
+}
 
 
 // Word Libariary for all the levels, each options is buttons
@@ -24,6 +33,7 @@ let options = {
   	"Sweethearts", "Windshields", "Caterpillars", "Televisioned", "Motorcycling",
   	"Sandcastles", "Hummingbirds", "Snowmobiling", "Dreamcatcher", "Pineappling"
 	],
+
 	medium: [
 		"Astonishing", "Breathtaking", "Cheesemaker", "Declaration", "Environment",
 		"Friendliest", "Generations", "Housekeeper", "Inspiration", "Journalists",
@@ -47,6 +57,7 @@ let options = {
 		"Ubiquitously", "Vibrational", "Wholehearted", "Xenophobia", "Yearbookish",
 		"Zoologically"
 	],
+
 	hard: [
 		"Accomplishment", "Acknowledgement", "Administration", "Adventurousness",
 		"Anthropologist", "Appreciation", "Authorization", "Beautification",
@@ -73,5 +84,4 @@ let options = {
 		"Telecommunication", "Transfiguration", "Transformational", "Uncharacteristic",
 		"Unconstitutionally", "Unparalleledly", "Unpredictability", "Weatherization",
 		"Weightlessness", "Whimsicalness", "Xenotransplant", "Zoologicalness"
-	  ],
-	}
+		], };
