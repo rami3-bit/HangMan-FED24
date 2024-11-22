@@ -1,29 +1,25 @@
 // Word Libariary for all the levels, each options is buttons
-const wordList = {
-	easy: [
-	"Basketball", "Friendship", "Adventure", "Motorcycle", "Headlights",
-  	"Pineapples", "Television", "Crocodiles", "Rainforest", "Blackboard",
-  	"Spaceships", "Lighthouse", "Snowflakes", "Peppermint", "Explorers",
-  	"Caterpillar", "Dragonfruit", "Sandcastle", "Windshield", "Background",
-  	"Dreamworld", "Honeycombs", "Backpacker", "Masterpiece", "Snowmobile",
-  	"Hummingbird", "Staircases", "Storybooks", "Childproof", "Friendzone",
-  	"Rattlesnake", "Sunflowers", "Peppercorn", "Landscapes", "Bookkeeper",
-  	"Chocolates", "Dragonflies", "Quicksteps", "Earthquake", "Springtime",
-  	"Sweetheart", "Playground", "Raincoated", "Pencilcase", "Tombstones",
-  	"Steamboats", "Umbrellas", "Campground", "Fishermens", "Adventurer",
-  	"Peppermint", "Landscaper", "Snowblower", "Storylines", "Dragonborn",
-  	"Quickstart", "Bookstores", "Friendlier", "Wonderland", "Unbreakable",
-  	"Masterminds", "Quicksilver", "Dreamcatch", "Watermelon", "Dragonfruit",
-  	"Caterpillar", "Spacesuits", "Rainforests", "Honeymooners", "Backpackers",
-  	"Lighthouses", "Chocolatier", "Kindergarten", "Backgrounds", "Friendliest",
-  	"Adventurers", "Peppermints", "Masterworks", "Blackboards", "Rattlesnakes",
-  	"Quickstarts", "Playgrounds", "Bookkeepers", "Storybookers", "Sunflowered",
-  	"Exploration", "Wonderfully", "Masterpieces", "Friendliness", "Dragonfishes",
-  	"Sweethearts", "Windshields", "Caterpillars", "Televisioned", "Motorcycling",
-  	"Sandcastles", "Hummingbirds", "Snowmobiling", "Dreamcatcher", "Pineappling"
-	],
-
-	medium: [
+export const wordList = [
+		"Basketball", "Friendship", "Adventure", "Motorcycle", "Headlights",
+  		"Pineapples", "Television", "Crocodiles", "Rainforest", "Blackboard",
+  		"Spaceships", "Lighthouse", "Snowflakes", "Peppermint", "Explorers",
+  		"Caterpillar", "Dragonfruit", "Sandcastle", "Windshield", "Background",
+  		"Dreamworld", "Honeycombs", "Backpacker", "Masterpiece", "Snowmobile",
+  		"Hummingbird", "Staircases", "Storybooks", "Childproof", "Friendzone",
+  		"Rattlesnake", "Sunflowers", "Peppercorn", "Landscapes", "Bookkeeper",
+  		"Chocolates", "Dragonflies", "Quicksteps", "Earthquake", "Springtime",
+  		"Sweetheart", "Playground", "Raincoated", "Pencilcase", "Tombstones",
+  		"Steamboats", "Umbrellas", "Campground", "Fishermens", "Adventurer",
+  		"Peppermint", "Landscaper", "Snowblower", "Storylines", "Dragonborn",
+  		"Quickstart", "Bookstores", "Friendlier", "Wonderland", "Unbreakable",
+  		"Masterminds", "Quicksilver", "Dreamcatch", "Watermelon", "Dragonfruit",
+  		"Caterpillar", "Spacesuits", "Rainforests", "Honeymooners", "Backpackers",
+  		"Lighthouses", "Chocolatier", "Kindergarten", "Backgrounds", "Friendliest",
+  		"Adventurers", "Peppermints", "Masterworks", "Blackboards", "Rattlesnakes",
+  		"Quickstarts", "Playgrounds", "Bookkeepers", "Storybookers", "Sunflowered",
+  		"Exploration", "Wonderfully", "Masterpieces", "Friendliness", "Dragonfishes",
+  		"Sweethearts", "Windshields", "Caterpillars", "Televisioned", "Motorcycling","Sandcastles", "Hummingbirds", "Snowmobiling", "Dreamcatcher", "Pineappling",
+		
 		"Astonishing", "Breathtaking", "Cheesemaker", "Declaration", "Environment",
 		"Friendliest", "Generations", "Housekeeper", "Inspiration", "Journalists",
 		"Knowledgeable", "Landscaping", "Merrymaking", "Negotiation", "Occupation",
@@ -44,10 +40,8 @@ const wordList = {
 		"Knowledgeably", "Leadership", "Maneuvering", "Nourishment", "Outlandishly",
 		"Participation", "Quickwitted", "Rejuvenation", "Suspension", "Transfusion",
 		"Ubiquitously", "Vibrational", "Wholehearted", "Xenophobia", "Yearbookish",
-		"Zoologically"
-	],
+		"Zoologically",
 
-	hard: [
 		"Accomplishment", "Acknowledgement", "Administration", "Adventurousness",
 		"Anthropologist", "Appreciation", "Authorization", "Beautification",
 		"Choreographers", "Circumstantial", "Classification", "Communication",
@@ -72,5 +66,4 @@ const wordList = {
 		"Superintendence", "Supernaturalist", "Symbolistically", "Technologically",
 		"Telecommunication", "Transfiguration", "Transformational", "Uncharacteristic",
 		"Unconstitutionally", "Unparalleledly", "Unpredictability", "Weatherization",
-		"Weightlessness", "Whimsicalness", "Xenotransplant", "Zoologicalness"
-		], };
+		"Weightlessness", "Whimsicalness", "Xenotransplant", "Zoologicalness", ]
