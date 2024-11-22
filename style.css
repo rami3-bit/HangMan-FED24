@@ -66,6 +66,11 @@ body {
 
 .start {
 	background-color: blueviolet;
+	font-size: 40px;
+	cursor: pointer;
+	color: black; 
+	font-family: inherit;
+	width: 20rem;
 }
 
 .leaderboard-container > .leaderboard-button {
@@ -76,15 +81,21 @@ body {
 	width: 12rem;
 	height:3em;
 	margin: 2em;
+	cursor: pointer;
 }
 
-.easy, .medium, .hard, .start {
+.easy, .medium, .hard {
 font-size: 40px;
 cursor: pointer;
-color: black; 
+color: grey; 
 font-family: inherit;
 width: 20rem;
 }
+
+.easy.selected, .medium.selected, .hard.selected {
+	color: black;
+  }
+  
 
 .main-menu > input {
 width: 27rem;
