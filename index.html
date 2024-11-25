@@ -15,22 +15,39 @@
 </head>
 <body>
 	<main>
-		<!-- leaderboard -->
+		<!-- leaderboard öppen -->
 		<div class="leaderboard-container">
 			<button class="leaderboard-button">Leaderboard</button>
 		</div>
+	</main>
+	
+	<!--Leaderboard stängd-->
+		<section class="leaderboard-view hidden">
+			<h2>Leaderboard</h2>
+			<ul>
+				<li>Player 1 - 0 points</li>
+				<li>Player 2 - 0 points</li>
+				<li>Player 3 - 0 points</li>
+				<li>Player 4 - 0 points</li>
+				<li>Player 5 - 0 points</li>
+			</ul>
+			<button class="close-leaderboard">Close</button>
+		</section>
+
 			<section class="main-menu">
 				<h1 class="hangman-h1"> HangingMan </h1>
 				<!-- välj användarnamn -->
 				<div class="username">
 					<input type="text" id="username" name="username" placeholder="Your name" required />
 				</div>
+
 				<!-- välj svårighetsgrad -->
 				<div class="difficulty-selection">
 					<button class="easy"> Easy </button>
 					<button class="medium"> Medium</button>
 					<button class="hard"> Hard</button>
 				</div>
+				
 				<!-- start knapp -->
 				<div class="start-section">
 					<button class="start"> Start! </button>
