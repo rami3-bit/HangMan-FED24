@@ -65,12 +65,12 @@ const sortLeaderboard = (criteria) => {
 		}
 	})
 
-	// Växla sorteringsordning
+	// ------Växla sorteringsordning---------
 	sortOrder[criteria] = !sortOrder[criteria]
 
-	// Rensa listan och lägg tillbaka både sorterade poster och "Empty"
+	// --Rensar listan och lämnar tillbaks bsorterade poster och "Empty"--
 	leaderboardList.innerHTML = ''
-	sortedItems.concat(emptyItems).forEach(item => leaderboardList.appendChild(item));
+	sortedItems.concat(emptyItems).forEach(item => leaderboardList.appendChild(item))
 
 }
 
