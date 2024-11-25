@@ -41,8 +41,12 @@ body {
 }
 
 
-.difficulty-selection > div {
+.difficulty-selection > div, label {
 	cursor: pointer;
+}
+
+.difficulty-selection label {
+	display: block;
 }
 
 
@@ -86,6 +90,7 @@ body {
 }
 
 
+
 .leaderboard-container-button > .leaderboard-home-button {
 	margin-top: 0.5em;
 	background-color: rgb(167, 164, 164);
@@ -100,9 +105,6 @@ body {
     font-family: inherit;
 }
 
-.leaderboard-container-button > .leaderboard-home-button:hover {
-    background-color: #008805;
-}
 
 .easy, .medium, .hard {
 	font-size: 40px;
@@ -142,6 +144,7 @@ body {
 
 
 
+  
 
 
 
