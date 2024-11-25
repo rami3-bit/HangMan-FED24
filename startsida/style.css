@@ -34,12 +34,24 @@ body {
 	padding: 2em;
 }
 
-/* Start section */
-.start-section {
-	display: flex;
-	justify-content: center;
-	padding: 2em;
+.difficulty-selection > div {
+	text-align: center;
+	cursor: pointer;
+	color: white;
 }
+
+
+.difficulty-selection > div {
+	cursor: pointer;
+}
+
+
+/*döljer radio knappen*/
+.difficulty-selection input[type="radio"] {
+    display: none; 
+}
+
+
 
 /* Buttons */
 
@@ -52,6 +64,7 @@ body {
 
 .easy {
 	background-color: rgb(4, 57, 4);
+
 }
 
 .medium {
@@ -71,6 +84,7 @@ body {
 	font-family: inherit;
 	width: 20rem;
 }
+
 
 .leaderboard-container-button > .leaderboard-home-button {
 	margin-top: 0.5em;
@@ -96,11 +110,11 @@ body {
 	color: white; 
 	font-family: inherit;
 	width: 20rem;
-	color: color: black;
+	color: black;
 }
 
-.easy.selected, .medium.selected, .hard.selected {
-color: black;
+ .easy.selected, .medium.selected, .hard.selected {
+	color: black;
   }
   
   .easy.selected {
@@ -125,5 +139,13 @@ color: black;
 	text-align: center;
 	font-family: inherit;
 }
+
+
+
+
+
+
+
+
 
 
