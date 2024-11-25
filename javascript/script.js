@@ -12,14 +12,12 @@ const hangmanImage = document.querySelector(".hang-image");
 const keyboard = document.querySelector(".keyboard");
 const resetButton = document.getElementById("new-game-button");
 const gameOverDiv = document.querySelector(".game-over"); 
-// Game Over div
 const gameStatus = document.getElementById("game-status"); 
-// The text inside the Game Over div
 
 // keyboard buttons
 function createKeyboard() {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-  alphabet.forEach(letter => {
+	const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  	alphabet.forEach(letter => {
     const button = document.createElement("button");
     button.textContent = letter;
     button.addEventListener("click", () => handleGuess(letter, button));
@@ -30,17 +28,17 @@ function createKeyboard() {
 // Handle a guessed letter
 function handleGuess(letter, button) {
   if (guessedLetters.includes(letter) || mistakes >= maxMistakes) return;
-
   guessedLetters.push(letter);
   button.disabled = true;
   if (word.includes(letter)) {
-    updateWordDisplay();
+	updateWordDisplay();
+	button.style.backgroundColor = "lightgreen"
   } else {
+	button.style.backgroundColor = "#f08080"
     mistakes++;
     mistakesDisplay.textContent = mistakes;
     hangmanImage.src = `./images/bild-${mistakes}.svg`;
   }
-  checkGameOver();
 }
 
 // display guessed letters
