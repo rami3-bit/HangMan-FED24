@@ -51,16 +51,16 @@ body {
 }
 
 .easy {
-	background-color: rgb(9, 190, 9);
+	background-color: rgb(4, 57, 4);
 }
 
 .medium {
-	background-color: yellow;
+	background-color: rgb(124, 124, 15);
 	color: black;
 }
 
 .hard {
-	background-color: red;
+	background-color: rgb(91, 9, 9);
 }
 
 .start {
@@ -96,12 +96,24 @@ body {
 	color: grey; 
 	font-family: inherit;
 	width: 20rem;
+	color: color: black;
 }
 
 .easy.selected, .medium.selected, .hard.selected {
 	color: black;
   }
   
+  .easy.selected {
+	background-color: #10cd16;
+  }
+
+  .medium.selected {
+	background-color: yellow;
+  }
+
+  .hard.selected {
+	background-color: red;
+  }
 
 .main-menu > input {
 	width: 27rem;
