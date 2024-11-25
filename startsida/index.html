@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="/startsida/style.css">
 	<link rel="stylesheet" href="/leaderboard/leaderboard.css">
 	<script type="module" src="/leaderboard/leaderboard.js"></script>
-
+	<script type="module" src="/startsida/home.js"></script>
 
 <!-- fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,10 +17,11 @@
 </head>
 <body>
 	<main>
-		<div class="leaderboard-button-container">
-			<button id="leaderboard-home-button">Leaderboard</button>
+		<!-- leaderboard -->
+		<div class="leaderboard-container-button">
+			<button class="leaderboard-home-button">Leaderboard</button>
 		</div>
-		<!--  leaderboard -->
+
 		<div class="whole-leaderboard hidden">
 
 			<section class="leaderboard-container">
@@ -55,22 +56,23 @@
 	
 		</div>
 
-		
-
-		<section class="main-menu">
-			<h1> HangingMan </h1>
-			<div class="username">
-				<input type="text" id="username" name="username" placeholder="Your name" />
-			</div>
-			<div class="difficulty-selection">
-				<button class="easy"> Easy </button>
-				<button class="medium"> Medium</button>
-				<button class="hard"> Hard</button>
-			</div>
-			<div class="start-section">
-				<button class="start"> Start! </button>
-			</div>
-		</section>
+			<section class="main-menu">
+				<h1 class="hangman-h1"> HangingMan </h1>
+				<!-- välj användarnamn -->
+				<div class="username">
+					<input type="text" id="username" name="username" placeholder="Your name" required />
+				</div>
+				<!-- välj svårighetsgrad -->
+				<div class="difficulty-selection">
+					<button class="easy"> Easy </button>
+					<button class="medium"> Medium</button>
+					<button class="hard"> Hard</button>
+				</div>
+				<!-- start knapp -->
+				<div class="start-section">
+					<button class="start"> Start! </button>
+				</div>
+			</section>
 	</main>
 </body>
 </html>
