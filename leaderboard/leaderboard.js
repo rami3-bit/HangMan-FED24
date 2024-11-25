@@ -1,7 +1,7 @@
 // -----------------Deklarera variabler----------------
 const leaderboard = document.querySelector('.whole-leaderboard')
 const LeaderboardCloseButton = document.querySelector('.leaderboard-close-button')
-const LeaderboardHomeButton = document.querySelector('#leaderboard-home-button')
+const LeaderboardHomeButton = document.querySelector('.leaderboard-home-button')
 const mainMenu = document.querySelector('.main-menu')
 const leaderboardList = document.querySelector('.leaderboard-list')
 const sortButtons = Array.from(document.querySelectorAll('.leaderboard-sort-button'))
