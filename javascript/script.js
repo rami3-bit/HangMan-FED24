@@ -1,4 +1,5 @@
-// WordList second JS
+
+// WordList
 import { wordList } from './wordlist.js'; // Import the word list
 let word = wordList[Math.floor(Math.random() * wordList.length)];
 let guessedLetters = [];
@@ -14,7 +15,7 @@ const resetButton = document.getElementById("new-game-button");
 const gameOverDiv = document.querySelector(".game-over"); 
 const gameStatus = document.getElementById("game-status"); 
 
-// keyboard buttons
+// keyboard
 function createKeyboard() {
 	const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   	alphabet.forEach(letter => {
@@ -25,7 +26,6 @@ function createKeyboard() {
   });
 }
 
-// Handle a guessed letter
 function handleGuess(letter, button) {
   if (guessedLetters.includes(letter) || mistakes >= maxMistakes) return;
   guessedLetters.push(letter);
@@ -40,8 +40,6 @@ function handleGuess(letter, button) {
     hangmanImage.src = `./images/bild-${mistakes}.svg`;
   }
 }
-
-// display guessed letters
 function updateWordDisplay() {
   wordDisplay.innerHTML = "";
   word.split("").forEach(letter => {
@@ -50,8 +48,6 @@ function updateWordDisplay() {
     wordDisplay.appendChild(li);
   });
 }
-
-// Reset the game
 function reset() {
   guessedLetters = [];
   mistakes = 0;
@@ -60,12 +56,10 @@ function reset() {
   word = wordList[Math.floor(Math.random() * wordList.length)]; // Select new word
   updateWordDisplay();
   document.querySelectorAll(".keyboard button").forEach(button => button.disabled = false);
-  gameOverDiv.classList.add("hidden"); // Hide the game-over message
+  gameOverDiv.classList.add("hidden");
 }
 
-// Initialize the game
 createKeyboard();
 updateWordDisplay();
 
-// Add reset button event listener
 resetButton.addEventListener("click", reset);
