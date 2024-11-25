@@ -65,8 +65,8 @@ body {
     font-family: inherit;
   }
   
-  .leaderboard-button:hover {
-    background-color: #213c22;
+  .leaderboard-container > .leaderboard-button:hover {
+    background-color: #008805;
   }
 
 .easy {
