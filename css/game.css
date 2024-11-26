@@ -23,8 +23,9 @@ body {
 
 /* här är  för spelet */
 .game-container {
+	flex-direction: column;
 	border: solid black 2px;
-	height: auto;
+	height: 700px;
     width: auto;
     display: flex;
     justify-content: center;
@@ -48,7 +49,7 @@ body {
 
 .leaderboard-btn {
     position: absolute;
-	top: -5.5em;
+	top: -8em;
     background-color: rgb(167, 164, 164);
     color: rgb(46, 37, 37);
     border: none;
@@ -68,7 +69,7 @@ body {
 /* Positioning för "Mode" */
 .mode {
     position: absolute;
-    top: -5.5em; 
+    top: -8em; 
     left: 1em; 
     color: navy;
     font-size: 1rem;
@@ -81,7 +82,7 @@ body {
 	flex-direction: row;
     position: absolute;
 	gap: 4px;
-    top: -5.5em; 
+    top: -8em;
     right: 1em; 
     color: navy;
     font-size: 1rem;
@@ -97,7 +98,7 @@ b {color: green;} /* för life och easy mode*/
 
 
 .hang-image {
-    max-width: 120px; 
+    max-width: 140px; 
     height: auto;
 }
 
@@ -157,7 +158,7 @@ button:hover {
 
 .game-control {
     display: flex;
-    gap: 1em;
+    gap: 4em;
 
 }
 
@@ -177,6 +178,7 @@ button:hover {
 
 
 .game-over {
+	color: rgb(250, 60, 60);
     text-align: center;
     /*margin-top: 1.25em;*/
 }
