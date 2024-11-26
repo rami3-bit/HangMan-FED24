@@ -77,7 +77,10 @@ body {
 
 /* Positioning för "Life" */
 .mistakes {
+	display: flex;
+	flex-direction: row;
     position: absolute;
+	gap: 4px;
     top: -5.5em; 
     right: 1em; 
     color: navy;
@@ -175,7 +178,7 @@ button:hover {
 
 .game-over {
     text-align: center;
-    margin-top: 1.25em;
+    /*margin-top: 1.25em;*/
 }
 
 .hidden {
