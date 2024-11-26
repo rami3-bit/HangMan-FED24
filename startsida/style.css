@@ -1,5 +1,7 @@
 /* Global settings */
 
+
+
 body {
 	background-color: white;
 	font-family: "Chewy", system-ui;
@@ -32,6 +34,7 @@ body {
 	justify-content: center;
 	gap: 24px;
 	padding: 2em;
+
 }
 
 .difficulty-selection > div {
@@ -43,6 +46,7 @@ body {
 
 .difficulty-selection > div, label {
 	cursor: pointer;
+	border: 4px solid black;
 }
 
 .difficulty-selection label {
@@ -53,6 +57,7 @@ body {
 /*döljer radio knappen*/
 .difficulty-selection input[type="radio"] {
     display: none; 
+	border: 24px;
 }
 
 
@@ -67,26 +72,27 @@ body {
 }
 
 .easy {
-	background-color: rgb(4, 57, 4);
+	background-color: rgb(55, 222, 21);
 
 }
 
 .medium {
-	background-color: rgb(124, 124, 15);
-	color: black;
+	background-color: rgb(187, 187, 0);
+
 }
 
 .hard {
-	background-color: rgb(91, 9, 9);
+	background-color: rgb(123, 0, 0);
 }
 
 .start {
-	background-color: blueviolet;
+	background-color: rgb(132, 0, 255);
 	font-size: 40px;
 	cursor: pointer;
 	color: black; 
 	font-family: inherit;
 	width: 20rem;
+	border: none;
 }
 
 
@@ -113,6 +119,7 @@ body {
 	font-family: inherit;
 	width: 20rem;
 	color: black;
+	border-radius: 5px;
 }
 
  .easy.selected, .medium.selected, .hard.selected {
@@ -120,7 +127,7 @@ body {
   }
   
   .easy.selected {
-	background-color: #10d713;
+	background-color: rgb(43, 255, 0);
   }
 
   .medium.selected {
@@ -128,7 +135,7 @@ body {
   }
 
   .hard.selected {
-	background-color: red;
+	background-color: rgb(255, 0, 0);
   }
 
 .main-menu > input {
