@@ -34,24 +34,12 @@ body {
 	padding: 2em;
 }
 
-.difficulty-selection > div {
-	text-align: center;
-	cursor: pointer;
-	color: white;
+/* Start section */
+.start-section {
+	display: flex;
+	justify-content: center;
+	padding: 2em;
 }
-
-
-.difficulty-selection > div {
-	cursor: pointer;
-}
-
-
-/*döljer radio knappen*/
-.difficulty-selection input[type="radio"] {
-    display: none; 
-}
-
-
 
 /* Buttons */
 
@@ -63,17 +51,16 @@ body {
 }
 
 .easy {
-	background-color: rgb(4, 57, 4);
-
+	background-color: rgb(9, 190, 9);
 }
 
 .medium {
-	background-color: rgb(124, 124, 15);
+	background-color: yellow;
 	color: black;
 }
 
 .hard {
-	background-color: rgb(91, 9, 9);
+	background-color: red;
 }
 
 .start {
@@ -84,7 +71,6 @@ body {
 	font-family: inherit;
 	width: 20rem;
 }
-
 
 .leaderboard-container-button > .leaderboard-home-button {
 	margin-top: 0.5em;
@@ -107,27 +93,15 @@ body {
 .easy, .medium, .hard {
 	font-size: 40px;
 	cursor: pointer;
-	color: white; 
+	color: grey; 
 	font-family: inherit;
 	width: 20rem;
-	color: black;
 }
 
- .easy.selected, .medium.selected, .hard.selected {
+.easy.selected, .medium.selected, .hard.selected {
 	color: black;
   }
   
-  .easy.selected {
-	background-color: #10d713;
-  }
-
-  .medium.selected {
-	background-color: yellow;
-  }
-
-  .hard.selected {
-	background-color: red;
-  }
 
 .main-menu > input {
 	width: 27rem;
@@ -139,13 +113,5 @@ body {
 	text-align: center;
 	font-family: inherit;
 }
-
-
-
-
-
-
-
-
 
 
