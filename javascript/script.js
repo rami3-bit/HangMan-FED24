@@ -1,5 +1,4 @@
 
-// WordList // Import the word list
 import { wordList } from './wordlist_easy.js';
 import { wordList } from './wordlist_medium.js';
 import { wordList } from './wordlist_hard.js'; 
@@ -9,7 +8,7 @@ let guessedLetters = [];
 let mistakes = 0;
 const maxMistakes = 6;
 
-// Elements
+
 const wordDisplay = document.querySelector(".word-display");
 const mistakesDisplay = document.querySelector("#Mistakes");
 const hangmanImage = document.querySelector(".hang-image");
@@ -18,7 +17,6 @@ const resetButton = document.getElementById("new-game-button");
 const gameOverDiv = document.querySelector(".game-over"); 
 const gameStatus = document.getElementById("game-status"); 
 
-// keyboard
 function createKeyboard() {
 	const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   	alphabet.forEach(letter => {
