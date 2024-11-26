@@ -1,6 +1,9 @@
 
-// WordList
-import { wordList } from './wordlist.js'; // Import the word list
+// WordList // Import the word list
+import { wordList } from './wordlist_easy.js';
+import { wordList } from './wordlist_medium.js';
+import { wordList } from './wordlist_hard.js'; 
+
 let word = wordList[Math.floor(Math.random() * wordList.length)];
 let guessedLetters = [];
 let mistakes = 0;
@@ -49,16 +52,20 @@ function updateWordDisplay() {
   });
 }
 function reset() {
-  guessedLetters = [];
-  mistakes = 0;
-  mistakesDisplay.textContent = mistakes;
-  hangmanImage.src = "./images/bild-0.svg";
-  word = wordList[Math.floor(Math.random() * wordList.length)]; // Select new word
-  updateWordDisplay();
-  document.querySelectorAll(".keyboard button").forEach(button => button.disabled = false);
-  gameOverDiv.classList.add("hidden");
-}
-
+	guessedLetters = [];
+	mistakes = 0;
+	mistakesDisplay.textContent = mistakes;
+	hangmanImage.src = "./images/bild-0.svg";
+	word = wordList[Math.floor(Math.random() * wordList.length)]; 
+	updateWordDisplay();
+	document.querySelectorAll(".keyboard button").forEach(button => {
+	  button.disabled = false; 
+	  button.style.backgroundColor = "white"; 
+	});
+  
+	gameOverDiv.classList.add("hidden");
+  }
+  
 createKeyboard();
 updateWordDisplay();
 
