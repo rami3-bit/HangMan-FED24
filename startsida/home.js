@@ -3,17 +3,19 @@ const mediumDiv = document.querySelector(".medium");
 const hardDiv = document.querySelector(".hard");
 		//väljer ID # i radio knapparna
 const easyRadio = document.querySelector("#easy");
-const mediumRadio = document.querySelector("#medium")
-const hardRadio = document.querySelector("#hard")
+const mediumRadio = document.querySelector("#medium");
+const hardRadio = document.querySelector("#hard");
 
 easyRadio.addEventListener("change", () => updateSelection
 (easyDiv, mediumDiv, hardDiv));
 
 mediumRadio.addEventListener("change", () => updateSelection
-(easyDiv, mediumDiv, hardDiv));
+(mediumDiv, hardDiv, easyDiv));
 
 hardRadio.addEventListener("change", () => updateSelection
-}
+(hardDiv, easyDiv, mediumDiv));
+
+
 
 // Funktion för att uppdatera val
 function updateSelection(selected, ...others) {
