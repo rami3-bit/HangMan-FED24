@@ -183,8 +183,14 @@ button:hover {
 }
 
 
-.reset-btn:hover, .quit-btn:hover {
-    background-color: red;
+.reset-btn:hover {
+    background-color: rgb(44, 99, 52);
+    color: white;
+}
+
+.quit-btn:hover{
+    background-color: rgb(172, 16, 16);
+    color: white;
 }
 
 
@@ -213,4 +219,5 @@ button:hover {
 
 .hint-btn:hover {
     background-color: rgb(255, 165, 0); 
+    color: beige;
 }
