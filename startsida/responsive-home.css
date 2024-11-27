@@ -18,72 +18,49 @@
         padding: 1em;
     }
 
-
-
 	.easy, .medium, .hard {
 		font-size: 30px;
-		cursor: pointer;
-		color: white;
-		font-family: inherit;
-		width: 20rem;
-		color: black;
-		border-radius: 5px;
+
 	}
 
 	.start {
-		background-color: rgb(163, 64, 255);
 		font-size: 30px;
-		cursor: pointer;
-		color: black;
-		font-family: inherit;
-		border: none;
-		border-radius: 4px;
-		border: 1px solid black;
-		width: 5em;
-		height: 1.4em;
+
 	} 
-} 
+}
 
 @media (max-width: 562px) {
 	body {
-        padding: 0;
+        padding: 20;
         margin: 0;
     }
 
     .hangman-h1 {
         font-size: 3rem; 
-        padding: 16px;
     }
 
     .main-menu {
         flex-direction: column; 
-        align-items: center;
-        margin-top: 2em;
-        padding: 1em;
     }
 
 
 
 	.easy, .medium, .hard {
-		font-size: 15px;
-		cursor: pointer;
-		color: white;
-		font-family: inherit;
-		width: 20rem;
-		color: black;
-		border-radius: 5px;
+		font-size: 20px;
 	}
 
 	.start {
 		background-color: rgb(163, 64, 255);
-		font-size: 15px;
-		cursor: pointer;
-		color: black;
-		font-family: inherit;
-		border: none;
-		border-radius: 4px;
-		border: 1px solid black;
-		width: 5em;
-		height: 1.4em;
+		font-size: 30px;
 	} 
+
+	#username {
+		font-size: 30px;
+		text-align: center;
+		font-family: inherit;
+	}
+
+	.difficulty-selection {
+		flex-direction: column;
+	}
 } 
