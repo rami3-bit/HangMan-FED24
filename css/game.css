@@ -200,4 +200,6 @@ button:hover {
     font-weight: bold;
 }
 
-
+.hint-btn:hover {
+    background-color: rgb(255, 165, 0); /* Slightly darker gold on hover */
+}
