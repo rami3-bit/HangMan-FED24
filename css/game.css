@@ -187,3 +187,17 @@ button:hover {
     display: none;
 }
 
+.hint-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(255, 215, 0);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: chewy;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
