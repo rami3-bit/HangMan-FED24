@@ -15,13 +15,7 @@ mediumRadio.addEventListener("change", () => updateSelection
 hardRadio.addEventListener("change", () => updateSelection
 (hardDiv, easyDiv, mediumDiv));
 
-
-
-// Funktion för att uppdatera val
 function updateSelection(selected, ...others) {
-  // Lägg till en klass till den valda div-enheten
-  selected.classList.add('selected');
-
-  // Ta bort klassen från de andra
-  others.forEach(div => div.classList.remove('selected'));
-}
+	selected.classList.add('selected');
+	others.forEach(div => div.classList.remove('selected'));
+  }

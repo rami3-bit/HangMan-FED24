@@ -158,9 +158,17 @@ body {
 	text-align: center;
 	font-family: inherit;
 }
+/*Dialog ruta*/
+.select-dialog {
+	display: flex;
+	flex-direction: column;
+	top: 30%;
+	left:40%;
+}
 
-
-
+.select-dialog > h2, p {
+	text-align: center;
+}
   
 
 
