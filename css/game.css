@@ -162,7 +162,7 @@ button:hover {
 
 }
 
-.reset-btn, .quit-btn {
+.reset-btn {
     width: 5em;
     height: 2.5em;
     border-radius: 5px;
@@ -171,6 +171,17 @@ button:hover {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.quit-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(222, 21, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 
 .reset-btn:hover, .quit-btn:hover {
     background-color: red;
