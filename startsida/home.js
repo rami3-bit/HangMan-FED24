@@ -19,3 +19,38 @@ function updateSelection(selected, ...others) {
 	selected.classList.add('selected');
 	others.forEach(div => div.classList.remove('selected'));
   }
+
+
+
+
+  
+
+
+
+
+
+
+  // Hämta DOM-elementen
+const usernameInput = document.getElementById("username").value;
+const errorUsername = document.getElementById("error-username");
+const errorLevel = document.getElementById("error-level");
+const startButton = document.querySelector(".start");
+const difficultyRadios = document.querySelectorAll("input[name='difficulty']");
+
+function validateForm() {
+	let isValid = true;
+
+	if(usernameInput.value.trim() === "") {
+		errorUsername.classList.add("show");
+
+
+
+
+	}
+}
+
+
+
+
+
+

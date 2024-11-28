@@ -11,7 +11,7 @@ body {
 	text-align: center;
 	font-size: 8rem;
 	padding: 24px;
-	
+	bottom: 50%;
 }
 
 /* Main menu */
@@ -19,8 +19,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 5em;
-	padding: 2em;
+	
 }
 
 /* Username input */
@@ -36,7 +35,7 @@ body {
 	display: flex;
 	justify-content: center;
 	gap: 24px;
-	padding: 2em;
+	padding: 12px;
 
 }
 
@@ -178,8 +177,15 @@ body {
   
 
 
+/* Felmeddelanden */
 
 
+#error-username, #error-level {
+    color: red;
+    padding: 2px;
+    display: none; 
+}
 
-
-
+#error-username.show, #error-level.show {
+    display: block; 
+}

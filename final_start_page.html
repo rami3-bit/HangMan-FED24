@@ -71,7 +71,15 @@
 			<div class="username">
 					<input type="text" id="username" name="username" placeholder="Your name" required minlength="1" maxlength="15" />
 				</div>
+
+<!-- Felmeddelande om man inte anger namn -->
+<div id="error-username">
+    Not so fast, Please type your awesome name.
+</div>
+
+
 			<!-- välj svårighetsgrad -->
+			<p>Choose diffculty:</p>
 			<div class="difficulty-selection">
 					
 					<div class="easy">
@@ -90,7 +98,11 @@
 					</div>
 				</div>
 				
-				
+				<div id="error-level">
+					<p>Please select your diffculty level. Maybe hard? 
+					</p>
+				</div>
+
 			<!-- start knapp -->
 			<div class="start-section">
 					<button class="start"> Start! </button>
