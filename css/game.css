@@ -1,0 +1,223 @@
+@import url(https://fonts.googleapis.com/css2?family=Chewy&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    font-family: "Chewy";
+    font-size: 16px; 
+  
+}
+
+.header {
+	margin-bottom: 3em;
+}
+
+
+/* här är  för spelet */
+.game-container {
+	flex-direction: column;
+	border: solid black 2px;
+	height: 700px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.game {
+    background-image: url('/images/background_664601-2392.avif');
+    width: 56em; 
+    height: 29.5em; 
+    padding: 1.25em;
+	margin-top: 6em;
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+	gap: 3em;
+}
+
+.game-leaderboard-btn {
+    position: absolute;
+	top: -8em;
+    background-color: rgb(167, 164, 164);
+    color: rgb(46, 37, 37);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7em;
+    cursor: pointer;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    font-family: chewy;
+  }
+  
+  .game-leaderboard-btn:hover {
+    background-color: #213c22;
+  }
+
+/* Positioning för "Mode" */
+.mode {
+    position: absolute;
+    top: -8em; 
+    left: 1em; 
+    color: navy;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Positioning för "Life" */
+.mistakes {
+	display: flex;
+	flex-direction: row;
+    position: absolute;
+	gap: 4px;
+    top: -8em;
+    right: 1em; 
+    color: navy;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+b {color: green;} /* för life och easy mode*/
+
+
+.hangman {
+    text-align: center;
+}
+
+
+.hang-image {
+    max-width: 140px; 
+    height: auto;
+}
+
+/* Sektion för ordet som ska gissas */
+.word {
+    margin-bottom: 0em;
+}
+
+
+.word-display {
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+}
+
+.word-display li {
+    width: 1.5em;
+    height: 1.5em;
+    border-bottom: 2px solid black;
+    list-style: none;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.keyboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: -1em;
+    
+}
+
+
+button {
+    width: 3em;
+    height: 2.5em;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: #4e4949;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: chewy;
+    
+}
+
+button:hover {
+    background-color: rgb(173, 159, 78);
+}
+
+
+.game-control {
+    display: flex;
+    gap: 4em;
+
+}
+
+.reset-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(55, 222, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quit-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(222, 21, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.reset-btn:hover {
+    background-color: rgb(44, 99, 52);
+    color: white;
+}
+
+.quit-btn:hover{
+    background-color: rgb(172, 16, 16);
+    color: white;
+}
+
+
+.game-over {
+	color: rgb(250, 60, 60);
+    text-align: center;
+    /*margin-top: 1.25em;*/
+}
+
+.hidden {
+    display: none;
+}
+
+#hint-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(255, 215, 0);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: chewy;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hint-btn:hover {
+    background-color: rgb(255, 165, 0); 
+    color: beige;
+}
