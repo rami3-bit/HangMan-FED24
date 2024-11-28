@@ -1,5 +1,0 @@
- 
-	document.querySelector('dialog').showModal();  
-
-  
-  
