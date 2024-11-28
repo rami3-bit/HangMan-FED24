@@ -162,7 +162,7 @@ button:hover {
 
 }
 
-.reset-btn, .quit-btn {
+.reset-btn {
     width: 5em;
     height: 2.5em;
     border-radius: 5px;
@@ -172,8 +172,25 @@ button:hover {
     transition: background-color 0.3s;
 }
 
-.reset-btn:hover, .quit-btn:hover {
-    background-color: red;
+.quit-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(222, 21, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.reset-btn:hover {
+    background-color: rgb(44, 99, 52);
+    color: white;
+}
+
+.quit-btn:hover{
+    background-color: rgb(172, 16, 16);
+    color: white;
 }
 
 
@@ -185,4 +202,22 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+#hint-btn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(255, 215, 0);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: chewy;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hint-btn:hover {
+    background-color: rgb(255, 165, 0); 
+    color: beige;
 }
