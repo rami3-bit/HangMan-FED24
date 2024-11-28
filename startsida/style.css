@@ -43,7 +43,7 @@ body {
 .difficulty-selection > div {
 	text-align: center;
 	cursor: pointer;
-	color: white;
+
 }
 
 
@@ -78,12 +78,12 @@ body {
 }
 
 .easy {
-	background-color: rgb(55, 222, 21);
+	background-color: rgb(29, 145, 6);
 
 }
 
 .medium {
-	background-color: rgb(187, 187, 0);
+	background-color: rgb(134, 134, 5);
 
 }
 
