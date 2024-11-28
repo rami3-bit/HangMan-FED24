@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HangMan</title>
+<!--work files html, css and javascript-->
+	<link rel="stylesheet" href="/startsida/style.css">
+	<link rel="stylesheet" href="/leaderboard/leaderboard.css">
+	<script type="module" src="/leaderboard/leaderboard.js"></script>
+	<script type="module" src="/startsida/home.js"></script>
+	<link rel="stylesheet" href="responsive-home.css">
+<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main>
+		<!-- leaderboard -->
+		<div class="leaderboard-container-button">
+			<button class="leaderboard-home-button">Leaderboard</button>
+		</div>
+
+		<div class="whole-leaderboard hidden">
+
+			<section class="leaderboard-container">
+				<button class="leaderboard-close-button"> X </button>
+		
+				<h2 class="leaderboard-h2"> Leaderboard </h2>
+		
+				<ol class="leaderboard-list">
+					<li class="leaderboard-li"> Amir, mistakes: 0, word's length: 15, 2024-11-18, 5 min, won </li>
+					<li class="leaderboard-li"> Abdul, mistakes: 1, word's length: 12, 2024-11-19, 7 min, won </li>
+					<li class="leaderboard-li"> Rami, mistakes: 2, word's length: 10, 2024-11-21, 8 min, won </li>
+					<li class="leaderboard-li"> Dmytro, mistakes: 3, word's length: 15, 2024-11-22, 10 min, won </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+				</ol>
+		
+				<div class="leaderboard-sort-button-container">
+	
+					<button class="leaderboard-sort-button result">Result</button>
+					<button class="leaderboard-sort-button time">Time</button>
+					<button class="leaderboard-sort-button date">Date</button>
+	
+					
+				</div>
+				
+		
+			</section>
+	
+		</div>
+
+			<section class="main-menu">
+				<h1 class="hangman-h1"> HangingMan </h1>
+			<!-- välj användarnamn -->
+			<div class="username">
+					<input type="text" id="username" name="username" placeholder="Your name" required minlength="1" maxlength="15" />
+				</div>
+			<!-- välj svårighetsgrad -->
+			<div class="difficulty-selection">
+					
+					<div class="easy">
+						<input type="radio" id="easy" name="difficulty" value="easy" required>
+						<label for="easy"> Easy </label>
+					</div>
+				
+					<div class="medium">
+						<input type="radio" id="medium" name="difficulty" value="medium" required>
+						<label for="medium"> Medium </label>
+					</div>
+				
+					<div class="hard">
+						<input type="radio" id="hard" name="difficulty" value="hard" required>
+						<label for="hard"> Hard </label>
+					</div>
+				</div>
+				
+				
+			<!-- start knapp -->
+			<div class="start-section">
+					<button class="start"> Start! </button>
+				</div>
+			</section>
+	</main>
+</body>
+</html>
