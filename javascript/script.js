@@ -87,9 +87,6 @@ function reset() {
     gameStatus.textContent = "";
 }
 
-
-document.addEventListener("DOMContentLoaded", () => {
-	createKeyboard();
-	updateWordDisplay();
-	resetButton.addEventListener("click", reset);
-  });
+createKeyboard();
+updateWordDisplay();
+resetButton.addEventListener("click", reset);
