@@ -4,18 +4,51 @@ const LeaderboardCloseButton = document.querySelector('.leaderboard-close-button
 const LeaderboardHomeButton = document.querySelector('.leaderboard-home-button')
 const mainMenu = document.querySelector('.main-menu')
 const leaderboardList = document.querySelector('.leaderboard-list')
+const LeaderboardGameButton = document.querySelector('.game-leaderboard-btn')
+const startButton = document.querySelector('.start')
+const gameContainer = document.querySelector(`.game-container`)
 const sortButtons = Array.from(document.querySelectorAll('.leaderboard-sort-button'))
 
-//---------------- Visa/dölj Leaderboard----------------
-LeaderboardHomeButton.addEventListener('click', () => {
-	leaderboard.classList.remove('hidden')
+let previousTab = null
+
+ // Visa spesific flick och gömma andra
+
+ function showTab(tabToShow) {
+	// gömma alla andra
+	mainMenu.classList.add("hidden")
+	gameContainer.classList.add("hidden")
+	leaderboard.classList.add("hidden")
+
+	// Visa den önskade flick
+	tabToShow.classList.remove("hidden")
+}
+
+// Öppna Leaderboard från "main-menu"
+LeaderboardHomeButton.addEventListener("click", () => {
+	previousTab = mainMenu // Deklarerar "main-menu" som previusTab
+	showTab(leaderboard)
+})
+
+// Öppna Leaderboard från "game-container"
+LeaderboardGameButton.addEventListener("click", () => {
+	previousTab = gameContainer // Deklarerar "game-container" som previusTab
+	showTab(leaderboard)
+})
+
+// Stänger leaderboard previousTab
+LeaderboardCloseButton.addEventListener("click", () => {
+	if (previousTab) {
+		showTab(previousTab) // Återställer föregående flick
+	}
+})
+
+// game start --- changing tab from start to game---
+
+startButton.addEventListener('click', () => {
+	gameContainer.classList.remove('hidden')
 	mainMenu.classList.add('hidden')
 })
 
-LeaderboardCloseButton.addEventListener('click', () => {
-	leaderboard.classList.add('hidden')
-	mainMenu.classList.remove('hidden')
-})
 
 // -------------Sorteringsordning, stigande-----------
 let sortOrder = {

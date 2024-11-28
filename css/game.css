@@ -11,7 +11,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-    font-family: chewy;
+    font-family: "Chewy";
     font-size: 16px; 
   
 }
@@ -47,7 +47,7 @@ body {
 	gap: 3em;
 }
 
-.leaderboard-btn {
+.game-leaderboard-btn {
     position: absolute;
 	top: -8em;
     background-color: rgb(167, 164, 164);
@@ -62,7 +62,7 @@ body {
     font-family: chewy;
   }
   
-  .leaderboard-btn:hover {
+  .game-leaderboard-btn:hover {
     background-color: #213c22;
   }
 

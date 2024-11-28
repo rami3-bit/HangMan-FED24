@@ -1,12 +1,5 @@
 /* Global settings */
 
-
-
-body {
-	background-color: white;
-	font-family: "Chewy", system-ui;
-	padding-top: 5rem;
-}
 /*h1*/
 .hangman-h1 {
 	text-align: center;
@@ -20,7 +13,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 5em;
+	/* margin-top: 5em; */
 	padding: 2em;
 }
 
