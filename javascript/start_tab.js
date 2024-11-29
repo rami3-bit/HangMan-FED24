@@ -25,12 +25,6 @@ function updateSelection(selected, ...others) {
 
   
 
-
-
-
-
-
-  // Hämta DOM-elementen
 const usernameInput = document.getElementById("username").value;
 const errorUsername = document.getElementById("error-username");
 const errorLevel = document.getElementById("error-level");
