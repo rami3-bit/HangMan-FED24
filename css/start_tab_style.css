@@ -36,7 +36,7 @@ body {
 	display: flex;
 	justify-content: center;
 	gap: 24px;
-	padding: 2em;
+	padding: 1em;
 
 }
 
@@ -176,7 +176,15 @@ body {
 	background-color: greenyellow;
 }
   
+#error-username {
+	color: red;
+	padding: 12px;
+}
 
+#error-level {
+	color: red;
+	padding: 12px;
+}
 
 
 
