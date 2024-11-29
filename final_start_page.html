@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HangMan</title>
+<!--css links----->
+	<link rel="stylesheet" href="/css/start_tab_style.css">
+	<link rel="stylesheet" href="/css/leaderboard.css">
+	<link rel="stylesheet" href="/css/game.css">
+	<link rel="stylesheet" href="/css/responsive-start_tab.css">
+<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+<!----------Script----------->
+	<script type="module" src="./javascript/script.js"></script>
+	<script type="module" src="./javascript/wordlist_easy.js"></script>
+	<script type="module" src="./javascript/wordlist_medium.js"></script>
+	<script type="module" src="./javascript/wordlist_hard.js"></script>
+    <script type="module" src="/javascript/hint.js"></script>
+	<script type="module" src="/javascript/start_tab.js"></script>
+	<script type="module" src="/javascript/tabs_and_leaderboard.js"></script>
+
+</head>
+<body>
+	<main>
+
+<!-- leaderboard tab -->
+		<div class="whole-leaderboard hidden">
+
+			<section class="leaderboard-container">
+				<button class="leaderboard-close-button"> X </button>
+		
+				<h2 class="leaderboard-h2"> Leaderboard </h2>
+		
+				<ol class="leaderboard-list">
+					<li class="leaderboard-li"> Amir, mistakes: 0, word's length: 15, 2024-11-18, 5 min, won </li>
+					<li class="leaderboard-li"> Abdul, mistakes: 1, word's length: 12, 2024-11-19, 7 min, won </li>
+					<li class="leaderboard-li"> Rami, mistakes: 2, word's length: 10, 2024-11-21, 8 min, won </li>
+					<li class="leaderboard-li"> Dmytro, mistakes: 3, word's length: 15, 2024-11-22, 10 min, won </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+					<li class="leaderboard-li"> Empty </li>
+				</ol>
+		
+				<div class="leaderboard-sort-button-container">
+	
+					<button class="leaderboard-sort-button result">Result</button>
+					<button class="leaderboard-sort-button time">Time</button>
+					<button class="leaderboard-sort-button date">Date</button>
+	
+					
+				</div>
+				
+		
+			</section>
+	
+		</div>
+<!-- start tab -->
+		<section class="main-menu">
+			<!-- start page leaderboard button-->
+			<div class="leaderboard-container-button">
+			<button class="leaderboard-home-button">Leaderboard</button>
+			</div>
+			<h1 class="hangman-h1"> HangingMan </h1>
+			<!-- välj användarnamn -->
+			<div class="username">
+					<input type="text" id="username" name="username" placeholder="Your name" required minlength="1" maxlength="15" />
+				</div>
+
+<!-- Felmeddelande om man inte anger namn -->
+<div id="error-username">
+    Not so fast, Please type your awesome name.
+</div>
+
+
+			<!-- välj svårighetsgrad -->
+			<p>Choose diffculty:</p>
+			<div class="difficulty-selection">
+					
+					<div class="easy">
+						<input type="radio" id="easy" name="difficulty" value="easy" required>
+						<label for="easy"> Easy </label>
+					</div>
+				
+					<div class="medium">
+						<input type="radio" id="medium" name="difficulty" value="medium" required>
+						<label for="medium"> Medium </label>
+					</div>
+				
+					<div class="hard">
+						<input type="radio" id="hard" name="difficulty" value="hard" required>
+						<label for="hard"> Hard </label>
+					</div>
+				</div>
+				
+				<div id="error-level">
+					<p>Please select your diffculty level. Maybe hard? 
+					</p>
+				</div>
+
+			<!-- start knapp -->
+			<div class="start-section">
+					<button class="start"> Start! </button>
+				</div>
+		</section>
+<!-- game tab -->
+		<div class="game-container hidden">
+			<div class="game">
+				<h3 class="mistakes">Mistakes:<b>
+				<div class="game-status" id="game-status"></div>
+				<span id="Mistakes">0</span> / <span id="maxWrong">6</span></b></h3>
+				<h3 class="mode">Mode: <b><span id="game-mode">Easy</span></b></h3>
+				
+				<button class="game-leaderboard-btn">Leaderboard</button>
+
+				<div class="hangman">
+					
+					<img src="./images/bild-0.svg" alt="hang" class="hang-image">
+				</div>
+				<div class="word">
+					<ul class="word-display">
+						<!--<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>-->
+					</ul>
+				</div>
+				
+				<div class="game-over hidden" >
+					<h3>Game Over!</h3>
+				</div>
+
+				<div class="keyboard">
+					<!--<button>A</button><button>B</button><button>C</button><button>D</button><button>E</button><button>F</button><button>G</button><button>H</button><button>I</button><button>J</button><button>K</button><button>L</button><button>M</button><button>N</button><button>O</button><button>P</button><button>Q</button><button>R</button><button>S</button><button>T</button><button>U</button><button>V</button><button>W</button><button>X</button><button>Y</button><button>Z</button>-->
+				</div>
+			</div>
+			<div class="game-control">
+				<button class="reset-btn" id="new-game-button">Reset</button>
+				<button id="hint-btn">Hint</button>
+
+				<button class="quit-btn">Quit</button>
+			</div>
+		</div>
+			
+	</main>
+	<p>@Copyright</p>
+</body>
+</html>
