@@ -1,0 +1,164 @@
+/* Global settings */
+
+/*h1*/
+.hangman-h1 {
+	text-align: center;
+	font-size: 8rem;
+	padding: 24px;
+	
+}
+
+/* Main menu */
+.main-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* margin-top: 5em; */
+	padding: 2em;
+}
+
+/* Username input */
+.username {
+	display: flex;
+	justify-content: center;
+}
+
+
+
+/* Difficulty selection */
+.difficulty-selection {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+	padding: 2em;
+
+}
+
+.difficulty-selection > div {
+	text-align: center;
+	cursor: pointer;
+	color: white;
+}
+
+
+.difficulty-selection > div, label {
+	cursor: pointer;
+	border: 1px solid black;
+	width: 5em;
+    height: 1.4em;
+    border-radius: 4px;
+}
+
+.difficulty-selection label {
+	display: block;
+}
+
+
+/*döljer radio knappen*/
+.difficulty-selection input[type="radio"] {
+    display: none; 
+	border: 24px;
+}
+
+
+
+/* Buttons */
+
+
+.leaderboard-container-button {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.easy {
+	background-color: rgb(55, 222, 21);
+
+}
+
+.medium {
+	background-color: rgb(187, 187, 0);
+
+}
+
+.hard {
+	background-color: rgb(123, 0, 0);
+}
+
+.start {
+	background-color: rgb(163, 64, 255);
+	font-size: 40px;
+	cursor: pointer;
+	color: black; 
+	font-family: inherit;
+	border: none;
+	border-radius: 4px;
+	border: 1px solid black;
+	width: 5em;
+    height: 1.4em;
+}
+
+
+
+.leaderboard-container-button > .leaderboard-home-button {
+	margin-top: 0.5em;
+	background-color: rgb(167, 164, 164);
+    color: rgb(46, 37, 37);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7em;
+    cursor: pointer;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    font-family: inherit;
+}
+
+
+.easy, .medium, .hard {
+	font-size: 40px;
+	cursor: pointer;
+	color: grey; 
+	font-family: inherit;
+	width: 20rem;
+	color: black;
+	border-radius: 5px;
+}
+
+.easy.selected, .medium.selected, .hard.selected {
+	color: black;
+  }
+  
+  .easy.selected {
+	background-color: rgb(43, 255, 0);
+  }
+
+  .medium.selected {
+	background-color: yellow;
+  }
+
+  .hard.selected {
+	background-color: rgb(255, 0, 0);
+  }
+
+.main-menu > input {
+	width: 27rem;
+	height :2rem;
+}
+
+#username {
+	font-size: 24px;
+	text-align: center;
+	font-family: inherit;
+}
+
+
+
+  
+
+
+
+
+
+
+
