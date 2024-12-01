@@ -179,11 +179,13 @@ body {
 #error-username {
 	color: red;
 	padding: 12px;
+	display: none;
 }
 
 #error-level {
 	color: red;
 	padding: 12px;
+	display: none
 }
 
 
