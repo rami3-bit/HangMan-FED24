@@ -25,6 +25,9 @@
     <script type="module" defer src="/javascript/hint.js"></script>
     <script type="module" defer src="/javascript/start_tab.js"></script>
     <script type="module" defer src="/javascript/tabs_and_leaderboard.js"></script>
+
+	<script type="module" defer src="/javascript/gameover.js"></script>
+
 </head>
 
 <body>
@@ -145,6 +148,15 @@
             </div>
         </div>
 
+		    <!-- Game Over Modal -->
+			<div id="game-over-modal" class="game-over-modal hidden">
+				<div class="modal-content">
+					<h2 id="game-result"></h2>
+					<p>The correct word was: <span id="correct-word"></span></p>
+					<button id="play-again-button">Play Again</button>
+					<button id="quit-game-button">Quit</button>
+				</div>
+			</div>
         
     </main>
     <p>@Copyright</p>

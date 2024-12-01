@@ -18,8 +18,6 @@ const hangmanImage = document.querySelector(".hang-image");
 const keyboard = document.querySelector(".keyboard");
 const resetButton = document.getElementById("new-game-button");
 const hintButton = document.getElementById("hint-btn");
-const gameOverDiv = document.querySelector(".game-over");
-const gameStatus = document.getElementById("game-status");
 const mainMenu = document.querySelector(".main-menu");
 const gameContainer = document.querySelector(".game-container");
 const leaderboardButton = document.querySelector(".leaderboard-home-button");
@@ -27,10 +25,17 @@ const leaderboardDiv = document.querySelector(".whole-leaderboard");
 const leaderboardCloseButton = document.querySelector(".leaderboard-close-button");
 const quitButton = document.querySelector(".quit-btn");
 
+// Game Over Modal References
+const gameOverModal = document.getElementById('game-over-modal');
+const gameResult = document.getElementById('game-result');
+const correctWordSpan = document.getElementById('correct-word');
+const playAgainButton = document.getElementById('play-again-button');
+const quitGameButton = document.getElementById('quit-game-button');
+
 // Initial Setup - Hide the necessary elements
 gameContainer.classList.add("hidden");
-gameOverDiv.classList.add("hidden");
 leaderboardDiv.classList.add("hidden");
+gameOverModal.classList.add("hidden");
 
 // Create Keyboard Function
 function createKeyboard() {
@@ -68,19 +73,18 @@ function handleGuess(letter, button) {
 function checkGameStatus() {
     const isWordGuessed = word.split("").every(letter => guessedLetters.includes(letter));
     if (isWordGuessed) {
-        gameOver("You Won!");
+        gameOver("won");
     } else if (mistakes >= maxMistakes) {
-        gameOver("You Lost!");
+        gameOver("lost");
     }
 }
 
 // Game Over Function
 function gameOver(status) {
     gameEnded = true; // Set the flag to true
-    gameOverDiv.classList.remove("hidden");
-    gameStatus.textContent = status;
     revealWord();
     disableKeyboard();
+    showGameOverModal(status, word);
 }
 
 // Disable All Keyboard Buttons Function
@@ -132,8 +136,7 @@ function reset() {
         button.disabled = false;
         button.style.backgroundColor = "white";
     });
-    gameOverDiv.classList.add("hidden");
-    gameStatus.textContent = "";
+    gameOverModal.classList.add('hidden'); // Hide the game over modal
     hintButton.disabled = false;
     hintButton.style.backgroundColor = "rgb(255, 215, 0)"; // Reset hint button color
 }
@@ -163,6 +166,28 @@ function giveHint() {
         }
     }
 }
+
+// Function to show game over modal
+function showGameOverModal(status, correctWord) {
+    gameOverModal.classList.remove('hidden');
+    gameResult.textContent = status === 'won' ? 'You Won!' : 'You Lost!';
+    gameResult.style.color = status === 'won' ? 'green' : 'red'; // Set color based on game status
+    correctWordSpan.textContent = correctWord.toUpperCase(); // Display guessed word in uppercase
+    correctWordSpan.style.fontWeight = 'bold'; // Make guessed word bold
+}
+
+// Event listeners for modal buttons
+playAgainButton.addEventListener('click', () => {
+    gameOverModal.classList.add('hidden');
+    reset();
+});
+
+quitGameButton.addEventListener('click', () => {
+    gameOverModal.classList.add('hidden');
+    gameContainer.classList.add('hidden');
+    mainMenu.classList.remove('hidden');
+    reset();
+});
 
 // Event Listeners for Buttons and Actions
 document.querySelector(".start").addEventListener("click", () => {

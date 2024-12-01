@@ -193,12 +193,69 @@ button:hover {
     background-color: rgb(172, 16, 16);
     color: white;
 }
-
+/* General Hidden Class */
 .hidden {
     display: none;
 }
 
+/* Game Over Modal Styling */
+.game-over-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 2em;
+    z-index: 100;
+    
+}
 
+.modal-content {
+    text-align: center;
+    margin: 1em;
+    color: #000000;
+    padding: 2em ;
+   
+}
+
+#play-again-button{
+    width: 6em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(55, 222, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    gap: 10em;
+    margin: 1em ;
+}
+
+#play-again-button:hover {
+    background-color: rgb(44, 99, 52);
+    color: white;
+
+}
+
+
+
+#quit-game-button {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(222, 21, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 1em;
+}
+
+
+#quit-game-button:hover {
+    background-color: rgb(172, 16, 16);
+    color: white;
+}
 
 #hint-btn {
     width: 5em;
@@ -214,9 +271,9 @@ button:hover {
     top: -2em;
 }
 
-.hint-btn:hover {
-    background-color: rgb(255, 165, 0); 
-    color: beige;
+#hint-btn:hover {
+    background-color: bisque;
+    color: white;
 }
 
 /* Small Mobile Devices (max-width: 480px) */
