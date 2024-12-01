@@ -16,27 +16,26 @@ body {
   
 }
 
-.header {
-	margin-bottom: 3em;
-}
+
 
 
 /* här är  för spelet */
 .game-container {
 	flex-direction: column;
 	border: solid black 2px;
-	height: 700px;
+	height: auto;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2em;
 }
 
 
 .game {
     background-image: url('/images/background_664601-2392.avif');
-    width: 56em; 
-    height: 29.5em; 
+    width: 48em; 
+    height: 27em; 
     padding: 1.25em;
 	margin-top: 6em;
     border-radius: 0.6em;
@@ -44,12 +43,12 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative; 
-	gap: 3em;
+	gap: 2em;
 }
 
 .game-leaderboard-btn {
     position: absolute;
-	top: -8em;
+	top: -5.5em;
     background-color: rgb(167, 164, 164);
     color: rgb(46, 37, 37);
     border: none;
@@ -63,13 +62,13 @@ body {
   }
   
   .game-leaderboard-btn:hover {
-    background-color: #213c22;
+    background-color: #6e9e70;
   }
 
 /* Positioning för "Mode" */
 .mode {
     position: absolute;
-    top: -8em; 
+    top: -5.5em; 
     left: 1em; 
     color: navy;
     font-size: 1rem;
@@ -82,7 +81,7 @@ body {
 	flex-direction: row;
     position: absolute;
 	gap: 4px;
-    top: -8em;
+    top: -5.5em;
     right: 1em; 
     color: navy;
     font-size: 1rem;
@@ -129,7 +128,8 @@ b {color: green;} /* för life och easy mode*/
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
-    margin-bottom: -1em;
+    
+
     
 }
 
@@ -159,6 +159,7 @@ button:hover {
 .game-control {
     display: flex;
     gap: 4em;
+    margin-bottom: 2em;
 
 }
 
@@ -192,16 +193,68 @@ button:hover {
     background-color: rgb(172, 16, 16);
     color: white;
 }
-
-
-.game-over {
-	color: rgb(250, 60, 60);
-    text-align: center;
-    /*margin-top: 1.25em;*/
-}
-
+/* General Hidden Class */
 .hidden {
     display: none;
+}
+
+/* Game Over Modal Styling */
+.game-over-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 2em;
+    z-index: 100;
+    
+}
+
+.modal-content {
+    text-align: center;
+    margin: 1em;
+    color: #000000;
+    padding: 2em ;
+   
+}
+
+#play-again-button{
+    width: 6em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(55, 222, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    gap: 10em;
+    margin: 1em ;
+}
+
+#play-again-button:hover {
+    background-color: rgb(44, 99, 52);
+    color: white;
+
+}
+
+
+
+#quit-game-button {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 5px;
+    background-color: rgb(222, 21, 21);
+    color: #4e4949;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 1em;
+}
+
+
+#quit-game-button:hover {
+    background-color: rgb(172, 16, 16);
+    color: white;
 }
 
 #hint-btn {
@@ -215,9 +268,86 @@ button:hover {
     font-family: chewy;
     font-size: 1em;
     font-weight: bold;
+    top: -2em;
 }
 
-.hint-btn:hover {
-    background-color: rgb(255, 165, 0); 
-    color: beige;
+#hint-btn:hover {
+    background-color: bisque;
+    color: white;
+}
+
+/* Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    body { 
+        font-size: 14px; padding: 1em; }
+
+    .game-container {
+        width: 90vw;
+         height: auto; margin-top: 2em; border-width: 1px;
+    }
+
+    .game {
+        width: 100%; height: auto; padding: 1em; gap: 1.5em; margin-top: 2em;
+    }
+
+    .game-leaderboard-btn, .mode, .mistakes {
+        top: -2em; 
+        font-size: 0.7rem; padding: 0.5em 0.8em;
+    }
+
+    .hang-image { max-width: 100px; }
+
+    .word-display li { width: 1.2em; height: 1.2em; font-size: 1.2rem; }
+
+    button {
+        width: 2.5em; height: 2em; font-size: 0.9em; 
+    }
+
+    .game-control {
+        gap: 1.5em; flex-direction: column; align-items: center;
+    }
+
+    #hint-btn, .reset-btn, .quit-btn {
+         margin: 0.5em 0;
+    }
+}
+
+/* Tablet Devices and iPads (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .game-container { width: 80vw; height: auto; margin-top: 4em; }
+
+    .game {
+        width: 100%; height: auto; padding: 1.25em; gap: 2em;
+    }
+
+ 
+
+    .hang-image { max-width: 120px; }
+
+    .word-display li { width: 1.4em; height: 1.4em; font-size: 1.3rem; }
+
+    button { width: 2.8em; height: 2.2em; font-size: 1em; }
+
+    .game-control {
+        gap: 2em; flex-direction: row; justify-content: space-around;
+    }
+}
+
+/* iPads Landscape and Small Laptops (768px to 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .game-container { width: 70vw; height: auto; margin-top: 3em; }
+
+    .game { width: 95%; padding: 1.5em; gap: 2.5em; }
+
+    .game-leaderboard-btn {
+        top: -6em; padding: 0.7em 1.2em; font-size: 1rem;
+    }
+
+    .hang-image { max-width: 130px; }
+
+    .word-display li { width: 1.5em; height: 1.5em; font-size: 1.5rem; }
+
+    button { width: 3em; height: 2.5em; font-size: 1em; }
+
+    .game-control { gap: 3em; }
 }
