@@ -1,11 +1,11 @@
-// Import word lists
+// Importing word lists for different difficulty levels
 import { wordList as easyWordList } from './wordlist_easy.js';
 import { wordList as mediumWordList } from './wordlist_medium.js';
 import { wordList as hardWordList } from './wordlist_hard.js';
 
-// Game Variables
+// Variables for game settings and state
 let wordList = easyWordList;
-let word = '';
+let word = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
 let guessedLetters = [];
 let mistakes = 0;
 let hintsUsed = 0;
@@ -13,20 +13,20 @@ let gameEnded = false;
 const maxMistakes = 6;
 const maxHints = 3;
 
-// Element References
+// Element references
 const wordDisplay = document.querySelector(".word-display");
 const mistakesDisplay = document.querySelector("#Mistakes");
 const hangmanImage = document.querySelector(".hang-image");
 const keyboard = document.querySelector(".keyboard");
 const resetButton = document.getElementById("new-game-button");
 const hintButton = document.getElementById("hint-btn");
-const quitButton = document.querySelector(".quit-btn");
 const mainMenu = document.querySelector(".main-menu");
-const gameContainer = document.querySelector(".game-container");
+const gameContainers = document.querySelectorAll(".game-container");
 const leaderboardButton = document.querySelector(".leaderboard-home-button");
 const leaderboardDiv = document.querySelector(".whole-leaderboard");
 const leaderboardCloseButton = document.querySelector(".leaderboard-close-button");
-const startButton = document.querySelector('.start');
+const quitButton = document.querySelector(".quit-btn");
+const modeDisplay = document.querySelector("#game-mode"); // Element to display the game mode
 
 // Game Over Modal References
 const gameOverModal = document.getElementById('game-over-modal');
@@ -35,54 +35,14 @@ const correctWordSpan = document.getElementById('correct-word');
 const playAgainButton = document.getElementById('play-again-button');
 const quitGameButton = document.getElementById('quit-game-button');
 
-// Difficulty Selection References
-const difficultyInputs = document.querySelectorAll('input[name="difficulty"]');
-let selectedDifficulty = 'easy';
+// Initial Setup - Hide the necessary elements
+gameContainers.forEach(container => container.classList.add("hidden"));
+leaderboardDiv.classList.add("hidden");
+gameOverModal.classList.add("hidden");
 
-// Attach event listeners to the difficulty selection buttons
-difficultyInputs.forEach(input => {
-    input.addEventListener('change', () => {
-        selectedDifficulty = input.value;
-    });
-});
-
-// Event listener for start button
-startButton.addEventListener('click', () => {
-    const username = document.querySelector('#username').value.trim();
-    if (!username || !selectedDifficulty) {
-        console.log("Please provide a username and select a difficulty level.");
-        return;
-    }
-
-    // Set the appropriate word list
-    if (selectedDifficulty === 'easy') {
-        wordList = easyWordList;
-    } else if (selectedDifficulty === 'medium') {
-        wordList = mediumWordList;
-    } else if (selectedDifficulty === 'hard') {
-        wordList = hardWordList;
-    }
-
-    // Initialize game variables
-    word = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
-    guessedLetters = [];
-    mistakes = 0;
-    hintsUsed = 0;
-    gameEnded = false;
-
-    mainMenu.classList.add('hidden');
-    gameContainer.classList.remove('hidden');
-    updateWordDisplay();
-    createKeyboard();
-    mistakesDisplay.textContent = `${mistakes} / ${maxMistakes}`;
-    hangmanImage.src = "./images/bild-0.svg";
-    document.querySelector('#game-mode').textContent = selectedDifficulty.charAt(0).toUpperCase() + selectedDifficulty.slice(1);
-});
-
-// Create Keyboard
+// Create Keyboard Function
 function createKeyboard() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    keyboard.innerHTML = '';
     alphabet.forEach(letter => {
         const button = document.createElement("button");
         button.textContent = letter;
@@ -91,10 +51,11 @@ function createKeyboard() {
     });
 }
 
-// Handle Guess
+// Handle Guess Function
 function handleGuess(letter, button) {
     if (gameEnded || guessedLetters.includes(letter)) return;
 
+    letter = letter.toLowerCase();
     guessedLetters.push(letter);
     button.disabled = true;
 
@@ -104,14 +65,14 @@ function handleGuess(letter, button) {
     } else {
         button.style.backgroundColor = "#f08080";
         mistakes++;
-        mistakesDisplay.textContent = `${mistakes} / ${maxMistakes}`;
+        mistakesDisplay.textContent = `${mistakes} / ${maxMistakes}`; // Update mistake counter correctly
         hangmanImage.src = `./images/bild-${mistakes}.svg`;
     }
 
     checkGameStatus();
 }
 
-// Check Game Status
+// Check Game Status Function
 function checkGameStatus() {
     const isWordGuessed = word.split("").every(letter => guessedLetters.includes(letter));
     if (isWordGuessed) {
@@ -121,83 +82,70 @@ function checkGameStatus() {
     }
 }
 
-// Game Over
+// Game Over Function
 function gameOver(status) {
     gameEnded = true;
-    revealWord();
+    revealWord(status);
     disableKeyboard();
     showGameOverModal(status, word);
 }
 
-// Reveal Word
-function revealWord() {
-    wordDisplay.innerHTML = '';
-    word.split("").forEach(letter => {
-        const li = document.createElement("li");
-        li.textContent = letter;
-        li.style.color = "red";
-        wordDisplay.appendChild(li);
-    });
-}
-
-// Update Word Display
-function updateWordDisplay() {
-    wordDisplay.innerHTML = '';
-    word.split("").forEach(letter => {
-        const li = document.createElement("li");
-        li.textContent = guessedLetters.includes(letter) ? letter : '';
-        li.classList.add("letter-placeholder");
-        li.style.borderBottom = "2px solid black";
-        wordDisplay.appendChild(li);
-    });
-}
-
-// Disable All Keyboard Buttons
+// Disable All Keyboard Buttons Function
 function disableKeyboard() {
     document.querySelectorAll(".keyboard button").forEach(button => {
         button.disabled = true;
     });
 }
 
-// Show Game Over Modal
-function showGameOverModal(status, correctWord) {
-    gameOverModal.classList.remove('hidden');
-    gameResult.textContent = status === 'won' ? 'You Won!' : 'You Lost!';
-    gameResult.style.color = status === 'won' ? 'green' : 'red';
-    correctWordSpan.textContent = correctWord.toUpperCase();
-    correctWordSpan.style.fontWeight = 'bold';
+// Reveal the Correct Word Function
+function revealWord(status) {
+    wordDisplay.innerHTML = "";
+    word.split("").forEach(letter => {
+        const li = document.createElement("li");
+        li.textContent = letter;
+        li.style.color = status === 'lost' ? 'green' : 'red'; // Mark correct word in green if lost
+        li.classList.add("letter-placeholder");
+        wordDisplay.appendChild(li);
+    });
 }
 
-// Reset Game
+// Update Word Display Function
+function updateWordDisplay() {
+    wordDisplay.innerHTML = "";
+    word.split("").forEach(letter => {
+        const li = document.createElement("li");
+        li.textContent = guessedLetters.includes(letter) ? letter : "";
+        li.classList.add("letter-placeholder");
+        li.style.borderBottom = "2px solid black";
+        wordDisplay.appendChild(li);
+    });
+}
+
+// Reset Game Function
 function reset() {
     guessedLetters = [];
     mistakes = 0;
     hintsUsed = 0;
     gameEnded = false;
-    mistakesDisplay.textContent = `${mistakes} / ${maxMistakes}`;
+    mistakesDisplay.textContent = `0 / ${maxMistakes}`; // Correct mistake counter
     hangmanImage.src = "./images/bild-0.svg";
     word = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
     updateWordDisplay();
-    createKeyboard();
+    document.querySelectorAll(".keyboard button").forEach(button => {
+        button.disabled = false;
+        button.style.backgroundColor = "white";
+    });
+    gameOverModal.classList.add('hidden');
     hintButton.disabled = false;
     hintButton.style.backgroundColor = "rgb(255, 215, 0)";
-    gameOverModal.classList.add('hidden');
 }
-
-// Event Listeners for Buttons
-resetButton.addEventListener("click", reset);
-hintButton.addEventListener("click", giveHint);
-quitButton.addEventListener("click", () => {
-    gameContainer.classList.add('hidden');
-    mainMenu.classList.remove('hidden');
-    reset();
-});
 
 // Hint Button Functionality
 function giveHint() {
     if (gameEnded || hintsUsed >= maxHints) return;
 
     const unguessedLetters = word.split("").filter(letter => !guessedLetters.includes(letter));
+
     if (unguessedLetters.length > 0) {
         const hintLetter = unguessedLetters[Math.floor(Math.random() * unguessedLetters.length)];
         guessedLetters.push(hintLetter);
@@ -210,6 +158,7 @@ function giveHint() {
         }
 
         hintsUsed++;
+
         if (hintsUsed >= maxHints) {
             hintButton.disabled = true;
             hintButton.style.backgroundColor = "grey";
@@ -217,18 +166,52 @@ function giveHint() {
     }
 }
 
-// Event Listeners for Game Over Modal Buttons
+// Function to Show Game Over Modal
+function showGameOverModal(status, correctWord) {
+    gameOverModal.classList.remove('hidden');
+    gameResult.textContent = status === 'won' ? 'You Won!' : 'You Lost!';
+    gameResult.style.color = status === 'won' ? 'green' : 'red';
+    correctWordSpan.textContent = correctWord.toUpperCase();
+    correctWordSpan.style.fontWeight = 'bold';
+}
+
+// Event Listeners for Modal Buttons
 playAgainButton.addEventListener('click', () => {
-    reset();
     gameOverModal.classList.add('hidden');
+    reset();
 });
 
 quitGameButton.addEventListener('click', () => {
-    gameContainer.classList.add('hidden');
-    mainMenu.classList.remove('hidden');
     gameOverModal.classList.add('hidden');
+    gameContainers.forEach(container => container.classList.add('hidden'));
+    mainMenu.classList.remove('hidden');
     reset();
 });
 
-// Initial Setup
+// Event Listeners for Buttons and Actions
+document.querySelector(".start").addEventListener("click", () => {
+    mainMenu.classList.add("hidden");
+    const selectedDifficulty = document.querySelector('input[name="difficulty"]:checked').value;
+    document.querySelector(`.game-container`).classList.remove("hidden");
+    wordList = selectedDifficulty === "easy" ? easyWordList : selectedDifficulty === "medium" ? mediumWordList : hardWordList;
+    modeDisplay.textContent = selectedDifficulty.charAt(0).toUpperCase() + selectedDifficulty.slice(1); // Set the mode text properly
+    reset();
+});
+
+resetButton.addEventListener("click", reset);
+hintButton.addEventListener("click", giveHint);
+leaderboardButton.addEventListener("click", () => {
+    leaderboardDiv.classList.remove("hidden");
+});
+leaderboardCloseButton.addEventListener("click", () => {
+    leaderboardDiv.classList.add("hidden");
+});
+quitButton.addEventListener("click", () => {
+    gameContainers.forEach(container => container.classList.add("hidden"));
+    mainMenu.classList.remove("hidden");
+    reset();
+});
+
+// Initial Setup Calls
+createKeyboard();
 updateWordDisplay();
