@@ -29,13 +29,14 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 2em;
+    background-image: url('/images/background_664601-2392.avif');
 }
 
 
 .game {
-    background-image: url('/images/background_664601-2392.avif');
-    width: 48em; 
-    height: 27em; 
+   
+    width: 46em; 
+    height: 26em; 
     padding: 1.25em;
 	margin-top: 6em;
     border-radius: 0.6em;
@@ -204,7 +205,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(232, 234, 232);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 2em;
@@ -217,7 +218,7 @@ button:hover {
     margin: 1em;
     color: #000000;
     padding: 2em ;
-   
+    letter-spacing: 0.1em;
 }
 
 #play-again-button{
@@ -225,7 +226,7 @@ button:hover {
     height: 2.5em;
     border-radius: 5px;
     background-color: rgb(55, 222, 21);
-    color: #4e4949;
+    color: #000000;
     cursor: pointer;
     transition: background-color 0.3s;
     gap: 10em;
@@ -245,7 +246,7 @@ button:hover {
     height: 2.5em;
     border-radius: 5px;
     background-color: rgb(222, 21, 21);
-    color: #4e4949;
+    color: #131212;
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 1em;
@@ -276,78 +277,186 @@ button:hover {
     color: white;
 }
 
-/* Small Mobile Devices (max-width: 480px) */
-@media (max-width: 480px) {
-    body { 
-        font-size: 14px; padding: 1em; }
-
-    .game-container {
-        width: 90vw;
-         height: auto; margin-top: 2em; border-width: 1px;
-    }
-
-    .game {
-        width: 100%; height: auto; padding: 1em; gap: 1.5em; margin-top: 2em;
-    }
-
-    .game-leaderboard-btn, .mode, .mistakes {
-        top: -2em; 
-        font-size: 0.7rem; padding: 0.5em 0.8em;
-    }
-
-    .hang-image { max-width: 100px; }
-
-    .word-display li { width: 1.2em; height: 1.2em; font-size: 1.2rem; }
-
-    button {
-        width: 2.5em; height: 2em; font-size: 0.9em; 
-    }
-
-    .game-control {
-        gap: 1.5em; flex-direction: column; align-items: center;
-    }
-
-    #hint-btn, .reset-btn, .quit-btn {
-         margin: 0.5em 0;
-    }
-}
-
 /* Tablet Devices and iPads (max-width: 1024px) */
 @media (max-width: 1024px) {
-    .game-container { width: 80vw; height: auto; margin-top: 4em; }
-
-    .game {
-        width: 100%; height: auto; padding: 1.25em; gap: 2em;
+    .game-container { 
+        width: 80vw; 
+        height: auto; 
+        margin-top: 4em; 
     }
 
- 
+    .game {
+        width: 100%; 
+        height: auto; 
+        padding: 1.25em; 
+        gap: 2em;
+    }
 
-    .hang-image { max-width: 120px; }
+    .hang-image { 
+        max-width: 120px; 
+    }
 
-    .word-display li { width: 1.4em; height: 1.4em; font-size: 1.3rem; }
-
-    button { width: 2.8em; height: 2.2em; font-size: 1em; }
+    button { 
+        width: 2.8em; 
+        height: 2.2em; 
+        font-size: 1em; 
+    }
 
     .game-control {
-        gap: 2em; flex-direction: row; justify-content: space-around;
+        gap: 2em; 
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+
+    .word-display li {
+        width: 1.4em; 
+        height: 1.4em; 
+        font-size: 1.4rem;
     }
 }
 
 /* iPads Landscape and Small Laptops (768px to 1200px) */
 @media (min-width: 768px) and (max-width: 1200px) {
-    .game-container { width: 70vw; height: auto; margin-top: 3em; }
-
-    .game { width: 95%; padding: 1.5em; gap: 2.5em; }
-
-    .game-leaderboard-btn {
-        top: -6em; padding: 0.7em 1.2em; font-size: 1rem;
+    .game-container { 
+        width: 70vw; 
+        height: auto; 
+        margin-top: 3em; 
     }
 
-    .hang-image { max-width: 130px; }
+    .game { 
+        width: 95%; 
+        padding: 1.5em; 
+        gap: 2.5em; 
+    }
 
-    .word-display li { width: 1.5em; height: 1.5em; font-size: 1.5rem; }
+    .game-leaderboard-btn {
+        top: -6em; 
+        padding: 0.7em 1.2em; 
+        font-size: 1rem;
+    }
 
-    button { width: 3em; height: 2.5em; font-size: 1em; }
+    .hang-image { 
+        max-width: 130px; 
+    }
 
-    .game-control { gap: 3em; }
+    .word-display li { 
+        width: 1.5em; 
+        height: 1.5em; 
+        font-size: 1.5rem; 
+    }
+
+    button { 
+        width: 3em; 
+        height: 2.5em; 
+        font-size: 1em; 
+    }
+
+    .game-control { 
+        gap: 3em; 
+    }
+}
+
+/* Responsive styles for screen sizes between 200px and 330px */
+@media (min-width: 200px) and (max-width: 330px) {
+    body {
+        font-size: 12px; 
+        padding: 0.5em;
+    }
+
+    .game-container {
+        width: 95vw; 
+        height: auto;
+        margin-top: 1.5em;
+        border-width: 1px; 
+    }
+
+    .game {
+        width: 100%; 
+        height: auto; 
+        padding: 0.75em; 
+        gap: 1em; 
+        margin-top: 2em;
+    }
+
+    .game-leaderboard-btn, .mode, .mistakes {
+        top: -1.5em; 
+        font-size: 0.6rem;
+        padding: 0.3em 0.6em;
+    }
+
+    .hang-image {
+        max-width: 80px; 
+    }
+
+    .word-display {
+        flex-wrap: wrap; 
+        gap: 0.2em;
+    }
+
+    .word-display li {
+        width: 0.8em; 
+        height: 0.8em;
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 2em; 
+        height: 1.8em;
+        font-size: 0.8em; 
+    }
+
+    .game-control {
+        gap: 1em;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    #hint-btn, .reset-btn, .quit-btn {
+        margin: 0.3em 0;
+    }
+}
+
+/* Responsive styles for screen sizes between 330px and 448px */
+@media (min-width: 331px) and (max-width: 448px) {
+    .word-display li {
+        width: 1em; 
+        height: 1em;
+        font-size: 1rem;
+    }
+}
+
+/* Responsive styles for screen sizes between 448px and 669px */
+@media (min-width: 449px) and (max-width: 669px) {
+    .word-display li {
+        width: 1.1em; 
+        height: 1.1em;
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet Devices (670px to 768px) */
+@media (min-width: 670px) and (max-width: 768px) {
+    .word-display li {
+        width: 1.2em; 
+        height: 1.2em;
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Laptops (769px to 990px) */
+@media (min-width: 769px) and (max-width: 990px) {
+    .word-display li {
+        width: 1.3em; 
+        height: 1.3em;
+        font-size: 1.3rem;
+    }
+}
+
+/* Larger Laptops and iPads Landscape (991px to 1200px) */
+@media (min-width: 991px) and (max-width: 1200px) {
+    .word-display li {
+        width: 1.4em; 
+        height: 1.4em;
+        font-size: 1.4rem;
+    }
 }
