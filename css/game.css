@@ -62,7 +62,7 @@ body {
   }
   
   .game-leaderboard-btn:hover {
-    background-color: #213c22;
+    background-color: #6e9e70;
   }
 
 /* Positioning för "Mode" */
@@ -267,8 +267,7 @@ button:hover {
 
     .hang-image { max-width: 120px; }
 
-   
-    
+    .word-display li { width: 1.4em; height: 1.4em; font-size: 1.3rem; }
 
     button { width: 2.8em; height: 2.2em; font-size: 1em; }
 
