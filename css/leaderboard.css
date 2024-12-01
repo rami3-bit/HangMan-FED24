@@ -45,14 +45,16 @@
 }
 
 .leaderboard-sort-button {
-	width: 5em;
-    height: 2.5em;
+	padding: 1em;
     border-radius: 5px;
     background-color: rgb(55, 222, 21);
     color: black;
     cursor: pointer;
 	font-family: "Chewy";
 	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .leaderboard-sort-button:hover, #leaderboard-button:hover {
