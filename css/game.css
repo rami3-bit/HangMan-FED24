@@ -263,13 +263,12 @@ button:hover {
         width: 100%; height: auto; padding: 1.25em; gap: 2em;
     }
 
-    .game-leaderboard-btn, .mode, .mistakes {
-        top: -5.5em; font-size: 1rem; padding: 0.6em 1em;
-    }
+ 
 
     .hang-image { max-width: 120px; }
 
-    .word-display li { width: 1.4em; height: 1.4em; font-size: 1.3rem; }
+   
+    
 
     button { width: 2.8em; height: 2.2em; font-size: 1em; }
 
