@@ -42,6 +42,7 @@ gameOverModal.classList.add("hidden");
 
 // Create Keyboard Function
 function createKeyboard() {
+    keyboard.innerHTML = ''; // Clear previous keyboard buttons
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     alphabet.forEach(letter => {
         const button = document.createElement("button");
@@ -52,18 +53,19 @@ function createKeyboard() {
 }
 
 // Handle Guess Function
-function handleGuess(letter, button) {
+function handleGuess(letter, button = null) {
     if (gameEnded || guessedLetters.includes(letter)) return;
 
     letter = letter.toLowerCase();
     guessedLetters.push(letter);
-    button.disabled = true;
+
+    if (button) button.disabled = true;
 
     if (word.includes(letter)) {
         updateWordDisplay();
-        button.style.backgroundColor = "lightgreen";
+        if (button) button.style.backgroundColor = "lightgreen";
     } else {
-        button.style.backgroundColor = "#f08080";
+        if (button) button.style.backgroundColor = "#f08080";
         mistakes++;
         mistakesDisplay.textContent = `${mistakes} / ${maxMistakes}`; // Update mistake counter correctly
         hangmanImage.src = `./images/bild-${mistakes}.svg`;
@@ -131,10 +133,7 @@ function reset() {
     hangmanImage.src = "./images/bild-0.svg";
     word = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
     updateWordDisplay();
-    document.querySelectorAll(".keyboard button").forEach(button => {
-        button.disabled = false;
-        button.style.backgroundColor = "white";
-    });
+    createKeyboard();
     gameOverModal.classList.add('hidden');
     hintButton.disabled = false;
     hintButton.style.backgroundColor = "rgb(255, 215, 0)";
@@ -210,6 +209,21 @@ quitButton.addEventListener("click", () => {
     gameContainers.forEach(container => container.classList.add("hidden"));
     mainMenu.classList.remove("hidden");
     reset();
+});
+
+// Adding keyboard event listener for computer keyboard input
+document.addEventListener('keydown', (event) => {
+    if (gameEnded) return;
+
+    const key = event.key.toUpperCase();
+
+    // Ignore special keys such as Shift, Alt, Tab, etc.
+    if (key.length === 1 && key >= 'A' && key <= 'Z') {
+        const button = Array.from(keyboard.children).find(btn => btn.textContent === key);
+        if (button && !button.disabled) {
+            handleGuess(key, button);
+        }
+    }
 });
 
 // Initial Setup Calls
