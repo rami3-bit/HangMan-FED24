@@ -16,27 +16,26 @@ body {
   
 }
 
-.header {
-	margin-bottom: 3em;
-}
+
 
 
 /* här är  för spelet */
 .game-container {
 	flex-direction: column;
 	border: solid black 2px;
-	height: 700px;
+	height: auto;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2em;
 }
 
 
 .game {
     background-image: url('/images/background_664601-2392.avif');
-    width: 56em; 
-    height: 29.5em; 
+    width: 48em; 
+    height: 27em; 
     padding: 1.25em;
 	margin-top: 6em;
     border-radius: 0.6em;
@@ -44,12 +43,12 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative; 
-	gap: 3em;
+	gap: 2em;
 }
 
 .game-leaderboard-btn {
     position: absolute;
-	top: -8em;
+	top: -5.5em;
     background-color: rgb(167, 164, 164);
     color: rgb(46, 37, 37);
     border: none;
@@ -69,7 +68,7 @@ body {
 /* Positioning för "Mode" */
 .mode {
     position: absolute;
-    top: -8em; 
+    top: -5.5em; 
     left: 1em; 
     color: navy;
     font-size: 1rem;
@@ -82,7 +81,7 @@ body {
 	flex-direction: row;
     position: absolute;
 	gap: 4px;
-    top: -8em;
+    top: -5.5em;
     right: 1em; 
     color: navy;
     font-size: 1rem;
@@ -129,7 +128,8 @@ b {color: green;} /* för life och easy mode*/
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
-    margin-bottom: -1em;
+    
+
     
 }
 
@@ -159,6 +159,7 @@ button:hover {
 .game-control {
     display: flex;
     gap: 4em;
+    margin-bottom: 2em;
 
 }
 
@@ -194,15 +195,7 @@ button:hover {
 }
 
 
-.game-over {
-	color: rgb(250, 60, 60);
-    text-align: center;
-    /*margin-top: 1.25em;*/
-}
 
-.hidden {
-    display: none;
-}
 
 #hint-btn {
     width: 5em;
@@ -215,9 +208,11 @@ button:hover {
     font-family: chewy;
     font-size: 1em;
     font-weight: bold;
+    top: -2em;
 }
 
 .hint-btn:hover {
     background-color: rgb(255, 165, 0); 
     color: beige;
 }
+
