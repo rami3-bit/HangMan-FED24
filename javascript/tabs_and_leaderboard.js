@@ -82,21 +82,40 @@ const sortLeaderboard = (criteria) => {
 	const sortedItems = dataItems.sort((a, b) => {
 		const aData = parseListItem(a.textContent)
 		const bData = parseListItem(b.textContent)
-
+	
 		if (criteria === 'result') {
-			return sortOrder.result
-				? aData.mistakes - bData.mistakes || bData.wordLength - aData.wordLength
-				: bData.mistakes - aData.mistakes || aData.wordLength - bData.wordLength
+			if (sortOrder.result) {
+				if (aData.mistakes !== bData.mistakes) {
+					return aData.mistakes - bData.mistakes
+				} else {
+					return bData.wordLength - aData.wordLength
+				}
+			} else {
+				if (aData.mistakes !== bData.mistakes) {
+					return bData.mistakes - aData.mistakes
+				} else {
+					return aData.wordLength - bData.wordLength
+				}
+			}
 		}
-
+	
 		if (criteria === 'time') {
-			return sortOrder.time ? aData.time - bData.time : bData.time - aData.time
+			if (sortOrder.time) {
+				return aData.time - bData.time
+			} else {
+				return bData.time - aData.time
+			}
 		}
-
+	
 		if (criteria === 'date') {
-			return sortOrder.date ? aData.date - bData.date : bData.date - aData.date
+			if (sortOrder.date) {
+				return aData.date - bData.date
+			} else {
+				return bData.date - aData.date
+			}
 		}
 	})
+	
 
 	// ------Växla sorteringsordning---------
 	sortOrder[criteria] = !sortOrder[criteria]
@@ -110,11 +129,15 @@ const sortLeaderboard = (criteria) => {
 // ------------eventlisteners för sort knappar------------
 sortButtons.forEach(button => {
 	button.addEventListener('click', (event) => {
-		const criteria = event.target.classList.contains('result')
-			? 'result'
-			: event.target.classList.contains('time')
-			? 'time'
-			: 'date'
+		let criteria
+
+		if (event.target.classList.contains('result')) {
+			criteria = 'result'
+		} else if (event.target.classList.contains('time')) {
+			criteria = 'time'
+		} else {
+			criteria = 'date'
+		}
 		sortLeaderboard(criteria)
 	})
 })
