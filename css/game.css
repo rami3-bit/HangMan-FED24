@@ -1,5 +1,22 @@
 @import url(https://fonts.googleapis.com/css2?family=Chewy&display=swap);
 
+/* Root variables for consistency */
+:root {
+    --font-family: "Chewy";
+    --font-size-base: 16px;
+    --game-bg-color: url('/images/background_664601-2392.avif');
+    --border-radius: 5px;
+    --btn-bg-hover: rgb(173, 159, 78);
+    --btn-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    --modal-bg-color: rgb(232, 234, 232);
+    --mistake-color: navy;
+    --btn-primary-bg: rgb(55, 222, 21);
+    --btn-secondary-bg: rgb(222, 21, 21);
+    --btn-hint-bg: rgb(255, 215, 0);
+    --modal-padding: 2em;
+}
+
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,111 +24,104 @@
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-    font-family: "Chewy";
-    font-size: 16px; 
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
 }
 
-
-
-
-/* här är  för spelet */
+/* Game Container Styles */
 .game-container {
-	flex-direction: column;
-	border: solid black 2px;
-	height: auto;
+    flex-direction: column;
+    border: 2px solid black;
+    height: auto;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2em;
-    background-image: url('/images/background_664601-2392.avif');
+    background-image: var(--game-bg-color);
 }
 
-
 .game {
-   
-    width: 46em; 
-    height: 26em; 
+    width: 46em;
+    height: 26em;
     padding: 1.25em;
-	margin-top: 6em;
+    margin-top: 6em;
     border-radius: 0.6em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; 
-	gap: 2em;
+    position: relative;
+    gap: 2em;
 }
 
+.game-leaderboard-btn,
+.reset-btn,
+.quit-btn,
+#play-again-button,
+#quit-game-button,
+#hint-btn {
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: var(--font-family);
+}
+
+/* Game Leaderboard Button */
 .game-leaderboard-btn {
     position: absolute;
-	top: -5.5em;
+    top: -5.5em;
     background-color: rgb(167, 164, 164);
     color: rgb(46, 37, 37);
-    border: none;
-    border-radius: 5px;
     padding: 0.7em;
-    cursor: pointer;
     font-size: 1rem;
-    width: auto;
-    height: auto;
-    font-family: chewy;
-  }
-  
-  .game-leaderboard-btn:hover {
+}
+
+.game-leaderboard-btn:hover {
     background-color: #6e9e70;
-  }
-
-/* Positioning för "Mode" */
-.mode {
-    position: absolute;
-    top: -5.5em; 
-    left: 1em; 
-    color: navy;
-    font-size: 1rem;
-    font-weight: bold;
 }
 
-/* Positioning för "Life" */
-.mistakes {
-	display: flex;
-	flex-direction: row;
+/* Mode and Mistakes Positioning */
+.mode, .mistakes {
     position: absolute;
-	gap: 4px;
     top: -5.5em;
-    right: 1em; 
-    color: navy;
     font-size: 1rem;
     font-weight: bold;
 }
 
-b {color: green;} /* för life och easy mode*/
+.mode {
+    left: 1em;
+}
 
+.mistakes {
+    right: 1em;
+    display: flex;
+    gap: 4px;
+    color: var(--mistake-color);
+}
 
+b {
+    color: green;
+}
+
+/* Hangman and Word Display Styles */
 .hangman {
     text-align: center;
 }
 
-
 .hang-image {
-    max-width: 140px; 
+    max-width: 140px;
     height: auto;
 }
-
-/* Sektion för ordet som ska gissas */
-.word {
-    margin-bottom: 0em;
-}
-
 
 .word-display {
     display: flex;
     justify-content: center;
     gap: 0.3em;
+    flex-wrap: wrap;
 }
 
 .word-display li {
@@ -123,77 +133,61 @@ b {color: green;} /* för life och easy mode*/
     font-size: 1.5rem;
 }
 
+/* Keyboard and Button Styles */
 .keyboard {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5em;
-    
-
-    
 }
-
 
 button {
     width: 3em;
     height: 2.5em;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     color: #4e4949;
     font-size: 1em;
     text-align: center;
     text-transform: uppercase;
     font-weight: bolder;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: chewy;
-    
+    box-shadow: var(--btn-shadow);
 }
 
 button:hover {
-    background-color: rgb(173, 159, 78);
+    background-color: var(--btn-bg-hover);
 }
-
 
 .game-control {
     display: flex;
     gap: 4em;
     margin-bottom: 2em;
-
 }
 
 .reset-btn {
     width: 5em;
     height: 2.5em;
-    border-radius: 5px;
-    background-color: rgb(55, 222, 21);
+    background-color: var(--btn-primary-bg);
     color: #4e4949;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .quit-btn {
     width: 5em;
     height: 2.5em;
-    border-radius: 5px;
-    background-color: rgb(222, 21, 21);
+    background-color: var(--btn-secondary-bg);
     color: #4e4949;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
-
 
 .reset-btn:hover {
     background-color: rgb(44, 99, 52);
     color: white;
 }
 
-.quit-btn:hover{
+.quit-btn:hover {
     background-color: rgb(172, 16, 16);
     color: white;
 }
+
 /* General Hidden Class */
 .hidden {
     display: none;
@@ -205,53 +199,42 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(232, 234, 232);
+    background-color: var(--modal-bg-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 2em;
+    padding: var(--modal-padding);
     z-index: 100;
-    
 }
 
 .modal-content {
     text-align: center;
     margin: 1em;
     color: #000000;
-    padding: 2em ;
+    padding: var(--modal-padding);
     letter-spacing: 0.1em;
 }
 
-#play-again-button{
+#play-again-button {
     width: 6em;
     height: 2.5em;
-    border-radius: 5px;
-    background-color: rgb(55, 222, 21);
+    background-color: var(--btn-primary-bg);
     color: #000000;
-    cursor: pointer;
-    transition: background-color 0.3s;
     gap: 10em;
-    margin: 1em ;
+    margin: 1em;
 }
 
 #play-again-button:hover {
     background-color: rgb(44, 99, 52);
     color: white;
-
 }
-
-
 
 #quit-game-button {
     width: 5em;
     height: 2.5em;
-    border-radius: 5px;
-    background-color: rgb(222, 21, 21);
+    background-color: var(--btn-secondary-bg);
     color: #131212;
-    cursor: pointer;
-    transition: background-color 0.3s;
     margin: 1em;
 }
-
 
 #quit-game-button:hover {
     background-color: rgb(172, 16, 16);
@@ -261,12 +244,8 @@ button:hover {
 #hint-btn {
     width: 5em;
     height: 2.5em;
-    border-radius: 5px;
-    background-color: rgb(255, 215, 0);
+    background-color: var(--btn-hint-bg);
     color: #4e4949;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-family: chewy;
     font-size: 1em;
     font-weight: bold;
     top: -2em;
@@ -277,186 +256,107 @@ button:hover {
     color: white;
 }
 
-/* Tablet Devices and iPads (max-width: 1024px) */
+/* Responsive Styles */
 @media (max-width: 1024px) {
-    .game-container { 
-        width: 80vw; 
-        height: auto; 
-        margin-top: 4em; 
+    .game-container {
+        width: 80vw;
+        height: auto;
+        margin-top: 4em;
     }
 
     .game {
-        width: 100%; 
-        height: auto; 
-        padding: 1.25em; 
+        width: 100%;
+        padding: 1.25em;
         gap: 2em;
     }
 
-    .hang-image { 
-        max-width: 120px; 
+    .hang-image {
+        max-width: 120px;
     }
 
-    button { 
-        width: 2.8em; 
-        height: 2.2em; 
-        font-size: 1em; 
+    button {
+        width: 2.8em;
+        height: 2.2em;
     }
 
     .game-control {
-        gap: 2em; 
-        flex-direction: row; 
+        gap: 2em;
+        flex-direction: row;
         justify-content: space-around;
     }
 
     .word-display li {
-        width: 1.4em; 
-        height: 1.4em; 
+        width: 1.4em;
+        height: 1.4em;
         font-size: 1.4rem;
     }
 }
 
-/* iPads Landscape and Small Laptops (768px to 1200px) */
 @media (min-width: 768px) and (max-width: 1200px) {
-    .game-container { 
-        width: 70vw; 
-        height: auto; 
-        margin-top: 3em; 
+    .game-container {
+        width: 70vw;
+        height: auto;
+        margin-top: 3em;
     }
 
-    .game { 
-        width: 95%; 
-        padding: 1.5em; 
-        gap: 2.5em; 
+    .game {
+        width: 95%;
+        padding: 1.5em;
+        gap: 2.5em;
     }
 
-    .game-leaderboard-btn {
-        top: -6em; 
-        padding: 0.7em 1.2em; 
-        font-size: 1rem;
+    .hang-image {
+        max-width: 130px;
     }
 
-    .hang-image { 
-        max-width: 130px; 
+    .word-display li {
+        width: 1.5em;
+        height: 1.5em;
+        font-size: 1.5rem;
     }
 
-    .word-display li { 
-        width: 1.5em; 
-        height: 1.5em; 
-        font-size: 1.5rem; 
+    button {
+        width: 3em;
+        height: 2.5em;
     }
 
-    button { 
-        width: 3em; 
-        height: 2.5em; 
-        font-size: 1em; 
-    }
-
-    .game-control { 
-        gap: 3em; 
+    .game-control {
+        gap: 3em;
     }
 }
 
-/* Responsive styles for screen sizes between 200px and 330px */
 @media (min-width: 200px) and (max-width: 330px) {
     body {
-        font-size: 12px; 
+        font-size: 12px;
         padding: 0.5em;
     }
 
     .game-container {
-        width: 95vw; 
-        height: auto;
+        width: 95vw;
         margin-top: 1.5em;
-        border-width: 1px; 
     }
 
     .game {
-        width: 100%; 
-        height: auto; 
-        padding: 0.75em; 
-        gap: 1em; 
+        padding: 0.75em;
+        gap: 1em;
         margin-top: 2em;
     }
 
-    .game-leaderboard-btn, .mode, .mistakes {
-        top: -1.5em; 
-        font-size: 0.6rem;
-        padding: 0.3em 0.6em;
-    }
-
-    .hang-image {
-        max-width: 80px; 
-    }
-
-    .word-display {
-        flex-wrap: wrap; 
-        gap: 0.2em;
-    }
-
     .word-display li {
-        width: 0.8em; 
+        width: 0.8em;
         height: 0.8em;
         font-size: 0.9rem;
     }
 
     button {
-        width: 2em; 
+        width: 2em;
         height: 1.8em;
-        font-size: 0.8em; 
+        font-size: 0.8em;
     }
 
     .game-control {
         gap: 1em;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
-    }
-
-    #hint-btn, .reset-btn, .quit-btn {
-        margin: 0.3em 0;
-    }
-}
-
-/* Responsive styles for screen sizes between 330px and 448px */
-@media (min-width: 331px) and (max-width: 448px) {
-    .word-display li {
-        width: 1em; 
-        height: 1em;
-        font-size: 1rem;
-    }
-}
-
-/* Responsive styles for screen sizes between 448px and 669px */
-@media (min-width: 449px) and (max-width: 669px) {
-    .word-display li {
-        width: 1.1em; 
-        height: 1.1em;
-        font-size: 1.1rem;
-    }
-}
-
-/* Tablet Devices (670px to 768px) */
-@media (min-width: 670px) and (max-width: 768px) {
-    .word-display li {
-        width: 1.2em; 
-        height: 1.2em;
-        font-size: 1.2rem;
-    }
-}
-
-/* Small Laptops (769px to 990px) */
-@media (min-width: 769px) and (max-width: 990px) {
-    .word-display li {
-        width: 1.3em; 
-        height: 1.3em;
-        font-size: 1.3rem;
-    }
-}
-
-/* Larger Laptops and iPads Landscape (991px to 1200px) */
-@media (min-width: 991px) and (max-width: 1200px) {
-    .word-display li {
-        width: 1.4em; 
-        height: 1.4em;
-        font-size: 1.4rem;
     }
 }
