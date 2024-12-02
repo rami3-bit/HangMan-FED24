@@ -78,23 +78,10 @@ function handleGuess(letter, button = null) {
 // ---------------game timer--------------------
 
 document.querySelector(".start").addEventListener("click", () => {
-    mainMenu.classList.add("hidden");
-
-    const selectedDifficulty = document.querySelector('input[name="difficulty"]:checked').value;
-
-    if (selectedDifficulty === "easy") {
-        wordList = easyWordList;
-    } else if (selectedDifficulty === "medium") {
-        wordList = mediumWordList;
-    } else if (selectedDifficulty === "hard") {
-        wordList = hardWordList;
-    }
-
-    document.querySelector(`.game-container`).classList.remove("hidden");
-    // modeDisplay.textContent = selectedDifficulty.charAt(0).toUpperCase() + selectedDifficulty.slice(1); // Sätt rätt spelläge
-    gameStartTime = Date.now(); // Starta tiden
-    reset();
-});
+    mainMenu.classList.add("hidden")
+    gameStartTime = Date.now() // Starta tiden
+    reset()
+})
 
 // --------------------------------------------
 
@@ -119,7 +106,7 @@ function gameOver(status) {
     // Hämta data för att spara i leaderboard
     const playerName = document.getElementById('username').value || 'Anonymous';
     const wordLength = word.length;
-    const timeTaken = Math.floor((Date.now() - gameStartTime) / 60000); // Tid i minuter
+    const timeTaken = Math.floor((Date.now() - gameStartTime) / 1000); // Tid i minuter
     const currentDate = new Date().toISOString().split('T')[0];
 
     // Uppdatera leaderboard
@@ -319,7 +306,7 @@ function displayLeaderboard(leaderboard) {
 
     leaderboard.forEach(entry => {
         const li = document.createElement('li')
-        li.textContent = `${entry.name}, mistakes: ${entry.mistakes}, word's length: ${entry.wordLength}, ${new Date(entry.date).toLocaleDateString()}, ${entry.time} min, ${entry.status}`
+        li.textContent = `${entry.name}, mistakes: ${entry.mistakes}, word's length: ${entry.wordLength}, ${new Date(entry.date).toLocaleDateString()}, ${entry.time} sec, ${entry.status}`
         leaderboardList.appendChild(li)
     });
 
