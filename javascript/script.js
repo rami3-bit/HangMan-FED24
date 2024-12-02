@@ -253,19 +253,19 @@ document.addEventListener('keydown', (event) => {
 // -----------------local storage------------------------
 
 // --- Leaderboard hantering ---
-const MAX_LEADERBOARD_ENTRIES = 10; // Begränsa antalet poster till 10
+const MAX_LEADERBOARD_ENTRIES = 10  // Vi Begränsar antalet poster till 10
 
-// Funktion för att hämta leaderboard från Local Storage eller skapa en ny om den inte finns
+// Här är funktion för att hämta leaderboard från Local Storage eller skapa en ny om den inte finns
 function getLeaderboard() {
-    return JSON.parse(localStorage.getItem('leaderboard')) || [];
+    return JSON.parse(localStorage.getItem('leaderboard')) || []
 }
 
-// Funktion för att spara leaderboard till Local Storage
+// func för att spara leaderboard till Local Storage
 function saveLeaderboard(leaderboard) {
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard))
 }
 
-// Skapar en ny leaderboard-post
+//Kod som skapar en ny leaderboard post
 function createLeaderboardEntry(playerName, mistakes, wordLength, timeTaken, date, status) {
     return {
         name: playerName,
@@ -285,14 +285,14 @@ function sortLeaderboard(leaderboard) {
         } else if (a.wordLength !== b.wordLength) {
             return b.wordLength - a.wordLength; // Längre ord först
         } else {
-            return new Date(a.date) - new Date(b.date); // Tidigare datum först
+            return new Date(a.date) - new Date(b.date) // Tidigare datum först
         }
     });
 }
 
 // Uppdaterar leaderboard och sparar det i Local Storage
 function updateLeaderboard(playerName, mistakes, wordLength, timeTaken, date, status) {
-    const leaderboard = getLeaderboard();
+    const leaderboard = getLeaderboard()
 
     // Skapa ny post och lägg till den i leaderboarden
     const newEntry = createLeaderboardEntry(playerName, mistakes, wordLength, timeTaken, date, status);
