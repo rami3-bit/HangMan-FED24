@@ -13,14 +13,21 @@
 	align-items: center;
 	font-family: "Chewy";
 	border: 0.2em solid black;
-	width: 70vw;
-	margin: 0.5em;
+	width: 60vw;
+	margin: 2em;
 	background-image: url("/images/background_664601-2392.avif");
 	border-radius: 0.3em;
 }
 
+.leaderboard-closebtn-container {
+	display: flex;
+	width: 60vw;
+	justify-content: end;
+}
+
 .leaderboard-close-button {
-	align-self: flex-end;
+	width: 2em;
+	height: 2em;
 	background-color: rgb(236, 161, 161);
 	border-radius: 0.2em;
 
@@ -45,14 +52,16 @@
 }
 
 .leaderboard-sort-button {
-	width: 5em;
-    height: 2.5em;
+	padding: 1em;
     border-radius: 5px;
     background-color: rgb(55, 222, 21);
     color: black;
     cursor: pointer;
 	font-family: "Chewy";
 	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .leaderboard-sort-button:hover, #leaderboard-button:hover {

@@ -122,6 +122,9 @@ body {
     font-family: inherit;
 }
 
+.leaderboard-home-button:hover {
+    background-color: #6e9e70;
+}
 
 .easy, .medium, .hard {
 	font-size: 40px;
