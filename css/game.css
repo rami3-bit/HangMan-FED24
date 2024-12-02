@@ -300,13 +300,6 @@ button:hover {
     }
 }
 
-/* @media (min-width: 768px) and (max-width: 1200px) {
-    .game-container {
-        width: 70vw;
-        height: auto;
-        margin-top: 3em;
-    } */
-
     .game {
         width: 95%;
         padding: 1.5em;
@@ -331,7 +324,7 @@ button:hover {
     .game-control {
         gap: 3em;
     }
-}
+
 
 @media (min-width: 200px) and (max-width: 330px) {
     body {
