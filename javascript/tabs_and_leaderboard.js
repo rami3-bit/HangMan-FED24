@@ -8,29 +8,38 @@ const LeaderboardGameButton = document.querySelector('.game-leaderboard-btn')
 const startButton = document.querySelector('.start')
 const gameContainer = document.querySelector(`.game-container`)
 const sortButtons = Array.from(document.querySelectorAll('.leaderboard-sort-button'))
-const leaderboardData = JSON.parse(localStorage.getItem('leaderboard')) || []
 
 // render leaderboard med function---
 
 function renderLeaderboard() {
-    const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || []
-    const leaderboardContainer = document.getElementById('leaderboard-list')
+    const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+    const leaderboardContainer = document.getElementById('leaderboard-list');
     
-    // Clear the container before rendering
-    leaderboardContainer.innerHTML = ''
-
+    // Clear the container
+    leaderboardContainer.innerHTML = '';
+    
     if (leaderboard.length === 0) {
-        leaderboardContainer.innerHTML = '<p>No leaderboard data available.</p>'
-        return
+        leaderboardContainer.innerHTML = '<p>No leaderboard data available.</p>';
+        return;
     }
 
-    // Sort and render leaderboard
-    leaderboard.sort((a, b) => b.score - a.score)
+    // Sort by score descending
+	leaderboard.sort((a, b) => {
+        if (a.mistakes !== b.mistakes) {
+            return a.mistakes - b.mistakes; // Färre misstag först
+        } else if (a.wordLength !== b.wordLength) {
+            return b.wordLength - a.wordLength // Längre ord först
+        } else
+        return new Date(a.date) - new Date(b.date) // Tidigare datum först
+    });
+    renderLeaderboard()
+
+    // Render the sorted leaderboard
     leaderboard.forEach((entry, index) => {
-        const listItem = document.createElement('li')
-        listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score}`
-        leaderboardContainer.appendChild(listItem)
-    })
+        const listItem = document.createElement('li');
+        listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score}`;
+        leaderboardContainer.appendChild(listItem);
+    });
 }
 
 
