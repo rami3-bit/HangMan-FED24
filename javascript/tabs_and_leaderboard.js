@@ -58,6 +58,7 @@ LeaderboardHomeButton.addEventListener("click", () => {
 // Öppna Leaderboard från "game-container"
 LeaderboardGameButton.addEventListener("click", () => {
 	previousTab = gameContainer // Deklarerar "game-container" som previusTab
+	showTab(leaderboard)
 })
 
 // Stänger leaderboard previousTab
