@@ -83,7 +83,6 @@ body {
 /* Mode and Mistakes Positioning */
 .mode, .mistakes {
     position: absolute;
-    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -301,12 +300,12 @@ button:hover {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+/* @media (min-width: 768px) and (max-width: 1200px) {
     .game-container {
         width: 70vw;
         height: auto;
         margin-top: 3em;
-    }
+    } */
 
     .game {
         width: 95%;
