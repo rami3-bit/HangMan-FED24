@@ -5,4 +5,9 @@ export const wordList = [
 	"leadership", "navigators", "networking", "overcoming", "pathfinder", 
 	"pioneering", "progresses", "streamline", "strategies", "supportive", 
 	"teamworker", "tournaments", "transports", "understand", "validators", 
-	"viewpoints", "wanderlust", "workforces", "workspaces", "youngsters"];
+	"viewpoints", "wanderlust", "workforces", "workspaces", "youngsters",
+	"admiration", "atmosphere", "boardrooms", "breakdowns", "chocolates",
+	"commercial", "conspiracy", "credibility", "discipline", "earthquake",
+	"elevation", "enthusiasm", "flashbacks", "fundraiser", "journalism",
+	"landscaped", "livelihood", "management", "partnership", "reputation"
+]

@@ -10,6 +10,7 @@ let guessedLetters = [];
 let mistakes = 0;
 let hintsUsed = 0;
 let gameEnded = false;
+let gameStartTime; //börjar att räkna tiden efter spelare trycker på start knapp
 const maxMistakes = 6;
 const maxHints = 3;
 
@@ -74,6 +75,29 @@ function handleGuess(letter, button = null) {
     checkGameStatus();
 }
 
+// ---------------game timer--------------------
+
+document.querySelector(".start").addEventListener("click", () => {
+    mainMenu.classList.add("hidden");
+
+    const selectedDifficulty = document.querySelector('input[name="difficulty"]:checked').value;
+
+    if (selectedDifficulty === "easy") {
+        wordList = easyWordList;
+    } else if (selectedDifficulty === "medium") {
+        wordList = mediumWordList;
+    } else if (selectedDifficulty === "hard") {
+        wordList = hardWordList;
+    }
+
+    document.querySelector(`.game-container`).classList.remove("hidden");
+    // modeDisplay.textContent = selectedDifficulty.charAt(0).toUpperCase() + selectedDifficulty.slice(1); // Sätt rätt spelläge
+    gameStartTime = Date.now(); // Starta tiden
+    reset();
+});
+
+// --------------------------------------------
+
 // Check Game Status Function
 function checkGameStatus() {
     const isWordGuessed = word.split("").every(letter => guessedLetters.includes(letter));
@@ -85,12 +109,23 @@ function checkGameStatus() {
 }
 
 // Game Over Function
+// Game Over Function
 function gameOver(status) {
     gameEnded = true;
     revealWord(status);
     disableKeyboard();
     showGameOverModal(status, word);
+
+    // Hämta data för att spara i leaderboard
+    const playerName = document.getElementById('username').value || 'Anonymous';
+    const wordLength = word.length;
+    const timeTaken = Math.floor((Date.now() - gameStartTime) / 60000); // Tid i minuter
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    // Uppdatera leaderboard
+    updateLeaderboard(playerName, mistakes, wordLength, timeTaken, currentDate, status === 'won' ? 'won' : 'lost');
 }
+
 
 // Disable All Keyboard Buttons Function
 function disableKeyboard() {
@@ -225,6 +260,79 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
+
+
+// -----------------local storage------------------------
+
+// --- Leaderboard hantering ---
+const MAX_LEADERBOARD_ENTRIES = 10 // Begränsa antalet poster till 10
+
+// Vi hämtar leaderboard från Local Storage eller skapar ny
+function getLeaderboard() {
+    return JSON.parse(localStorage.getItem('leaderboard')) || [];
+}
+
+// Kod sparar leaderboard till Local Storage
+function saveLeaderboard(leaderboard) {
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard))
+}
+
+// Uppdaterar och visar leaderboard
+function updateLeaderboard(playerName, mistakes, wordLength, timeTaken, date, status) {
+    const leaderboard = getLeaderboard()
+
+    // Lägg till nytt resultat
+    leaderboard.push({
+        name: playerName,
+        mistakes: mistakes,
+        wordLength: wordLength,
+        time: timeTaken,
+        date: new Date(date).toISOString(),
+        status: status
+    })
+
+    // Sortera resultaten
+    leaderboard.sort((a, b) => {
+        if (a.mistakes !== b.mistakes) {
+            return a.mistakes - b.mistakes; // Färre misstag först
+        } else if (a.wordLength !== b.wordLength) {
+            return b.wordLength - a.wordLength // Längre ord först
+        } else
+        return new Date(a.date) - new Date(b.date) // Tidigare datum först
+    });
+
+    // Begränsa till de 10 bästa
+    const trimmedLeaderboard = leaderboard.slice(0, MAX_LEADERBOARD_ENTRIES)
+
+    // Spara uppdaterad leaderboard
+    saveLeaderboard(trimmedLeaderboard)
+
+    // Visa uppdaterad leaderboard
+    displayLeaderboard(trimmedLeaderboard)
+}
+
+// Visa leaderboard i HTML
+function displayLeaderboard(leaderboard) {
+    const leaderboardList = document.querySelector('.leaderboard-list')
+    leaderboardList.innerHTML = '' // Rensa tidigare lista
+
+    leaderboard.forEach(entry => {
+        const li = document.createElement('li')
+        li.textContent = `${entry.name}, mistakes: ${entry.mistakes}, word's length: ${entry.wordLength}, ${new Date(entry.date).toLocaleDateString()}, ${entry.time} min, ${entry.status}`
+        leaderboardList.appendChild(li)
+    });
+
+    // Koden lägger till "Empty" post om det finns färre än 10 poster
+    while (leaderboardList.children.length < MAX_LEADERBOARD_ENTRIES) {
+        const emptyLi = document.createElement('li')
+        emptyLi.textContent = 'Empty'
+        leaderboardList.appendChild(emptyLi)
+    }
+}
+// -------------------------------------------------------
+
+
 
 // Initial Setup Calls
 createKeyboard();

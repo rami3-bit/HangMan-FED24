@@ -36,8 +36,7 @@ body {
 .game-container {
     flex-direction: column;
     border: 2px solid black;
-    height: auto;
-    width: auto;
+    width: 60vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,10 +45,8 @@ body {
 }
 
 .game {
-    width: 46em;
-    height: 26em;
+    width: 50vw;
     padding: 1.25em;
-    margin-top: 6em;
     border-radius: 0.6em;
     display: flex;
     flex-direction: column;
@@ -72,8 +69,7 @@ body {
 
 /* Game Leaderboard Button */
 .game-leaderboard-btn {
-    position: absolute;
-    top: -5.5em;
+	width: 7em;
     background-color: rgb(167, 164, 164);
     color: rgb(46, 37, 37);
     padding: 0.7em;
@@ -87,7 +83,6 @@ body {
 /* Mode and Mistakes Positioning */
 .mode, .mistakes {
     position: absolute;
-    top: -5.5em;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -143,8 +138,9 @@ b {
 }
 
 button {
-    width: 3em;
-    height: 2.5em;
+    display: flex;
+	justify-content: center;
+	align-items: center;
     background-color: white;
     color: #4e4949;
     font-size: 1em;
@@ -165,15 +161,18 @@ button:hover {
 }
 
 .reset-btn {
-    width: 5em;
-    height: 2.5em;
+    display: flex;
+	justify-content: center;
+	align-items: center;
     background-color: var(--btn-primary-bg);
     color: #4e4949;
 }
 
 .quit-btn {
-    width: 5em;
-    height: 2.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    padding: 1em;
     background-color: var(--btn-secondary-bg);
     color: #4e4949;
 }
@@ -207,7 +206,10 @@ button:hover {
 }
 
 .modal-content {
+	display: flex;
+	flex-direction: column;
     text-align: center;
+	align-items: center;
     margin: 1em;
     color: #000000;
     padding: var(--modal-padding);
@@ -242,8 +244,9 @@ button:hover {
 }
 
 #hint-btn {
-    width: 5em;
-    height: 2.5em;
+    display: flex;
+	justify-content: center;
+	align-items: center;
     background-color: var(--btn-hint-bg);
     color: #4e4949;
     font-size: 1em;
@@ -254,6 +257,12 @@ button:hover {
 #hint-btn:hover {
     background-color: bisque;
     color: white;
+}
+
+.game-info-container {
+	display: flex;
+	width: 50vw;
+	height: 5vh;
 }
 
 /* Responsive Styles */

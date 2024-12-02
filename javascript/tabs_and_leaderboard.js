@@ -9,6 +9,7 @@ const startButton = document.querySelector('.start')
 const gameContainer = document.querySelector(`.game-container`)
 const sortButtons = Array.from(document.querySelectorAll('.leaderboard-sort-button'))
 
+
 let previousTab = null
 
  // Visa spesific flick och gömma andra
@@ -19,8 +20,7 @@ let previousTab = null
 	gameContainer.classList.add("hidden")
 	leaderboard.classList.add("hidden")
 
-	// Visa den önskade flick
-	tabToShow.classList.remove("hidden")
+	tabToShow.classList.remove("hidden") // Visa den önskade flik
 }
 
 // Öppna Leaderboard från "main-menu"
