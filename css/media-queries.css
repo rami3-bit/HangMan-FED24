@@ -1,0 +1,63 @@
+
+@media (max-width: 745px) {
+   
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .hangman-h1 {
+        font-size: 3rem; 
+        padding: 16px;
+    }
+
+    .main-menu {
+        flex-direction: column; 
+        align-items: center;
+        padding: 1em;
+    }
+
+	.easy, .medium, .hard {
+		font-size: 30px;
+
+	}
+
+	.start {
+		font-size: 30px;
+
+	} 	
+}
+
+@media (max-width: 562px) {
+	body {
+        padding: 20;
+        margin: 0;
+    }
+
+    .hangman-h1 {
+        font-size: 3rem; 
+    }
+
+    .main-menu {
+        flex-direction: column; 
+    }
+	
+	.easy, .medium, .hard {
+		font-size: 20px;
+	}
+
+	.start {
+		background-color: rgb(163, 64, 255);
+		font-size: 30px;
+	} 
+
+	#username {
+		font-size: 30px;
+		text-align: center;
+		font-family: inherit;
+	}
+
+	.difficulty-selection {
+		flex-direction: column;
+	}
+} 

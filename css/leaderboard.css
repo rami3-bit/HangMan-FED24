@@ -1,0 +1,93 @@
+* {
+	box-sizing: border-box; margin: 0;
+}
+
+.whole-leaderboard {
+	display: flex;
+	justify-content: center;
+}
+
+.leaderboard-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Chewy";
+	border: 0.2em solid black;
+	width: 60vw;
+	margin: 2em;
+	background-image: url("/images/background_664601-2392.avif");
+	border-radius: 0.3em;
+}
+
+.leaderboard-closebtn-container {
+	display: flex;
+	width: 60vw;
+	justify-content: end;
+}
+
+.leaderboard-close-button {
+	width: 2em;
+	height: 2em;
+	background-color: rgb(236, 161, 161);
+	border-radius: 0.2em;
+}
+
+.leaderboard-li {
+	margin: 1em 0.3em 1em 0;
+}
+
+.leaderboard-sort-button-container{
+	display: flex;
+	justify-content: space-around;
+	width: 65vw;
+	margin: 1em 0 1em 0;
+
+}
+
+.leaderboard-sort-button, .leaderboard-close-button, #leaderboard-button {
+	cursor: pointer;
+	transition: all;
+	transition-duration: 1s;
+}
+
+.leaderboard-sort-button {
+	padding: 1em;
+    border-radius: 5px;
+    background-color: rgb(55, 222, 21);
+    color: black;
+    cursor: pointer;
+	font-family: "Chewy";
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.leaderboard-sort-button:hover, #leaderboard-button:hover {
+	background-color: rgb(5, 95, 5);
+	color: white;
+}
+
+.leaderboard-close-button:hover {
+	background-color: crimson;
+}
+	
+#leaderboard-home-button {
+    background-color: grey;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7em;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "Chewy";
+	margin: 0.5em;
+}
+
+.leaderboard-list {
+	padding-left: 1.5em;
+}
+
+.hidden {
+	display: none;
+}

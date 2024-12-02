@@ -1,0 +1,200 @@
+/* Global settings */
+
+
+
+body {
+	background-color: white;
+	font-family: "Chewy", system-ui;
+}
+/*h1*/
+.hangman-h1 {
+	text-align: center;
+	font-size: 8rem;
+	padding: 24px;
+	
+}
+
+/* Main menu */
+.main-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	padding: 2em;
+}
+
+/* Username input */
+.username {
+	display: flex;
+	justify-content: center;
+}
+
+
+
+/* Difficulty selection */
+.difficulty-selection {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+	padding: 1em;
+
+}
+
+.difficulty-selection > div {
+	text-align: center;
+	cursor: pointer;
+
+}
+
+
+.difficulty-selection > div, label {
+	cursor: pointer;
+	border: 1px solid black;
+	width: 5em;
+    height: 1.4em;
+    border-radius: 4px;
+}
+
+.difficulty-selection label {
+	display: block;
+}
+
+
+/*döljer radio knappen*/
+.difficulty-selection input[type="radio"] {
+    display: none; 
+	border: 24px;
+}
+
+.h3-choose {
+	margin:0.5em;
+}
+
+/* Buttons */
+
+
+.leaderboard-container-button {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.easy {
+	background-color: rgb(29, 145, 6);
+
+}
+
+.medium {
+	background-color: rgb(134, 134, 5);
+
+}
+
+.hard {
+	background-color: rgb(123, 0, 0);
+}
+
+.start {
+	background-color: rgb(163, 64, 255);
+	font-size: 40px;
+	cursor: pointer;
+	color: black; 
+	font-family: inherit;
+	border: none;
+	border-radius: 4px;
+	border: 1px solid black;
+	width: 5em;
+    height: 1.4em;
+}
+
+
+
+.leaderboard-container-button > .leaderboard-home-button {
+	margin-top: 0.5em;
+	background-color: rgb(167, 164, 164);
+    color: rgb(46, 37, 37);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7em;
+    cursor: pointer;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    font-family: inherit;
+}
+
+.leaderboard-home-button:hover {
+    background-color: #6e9e70;
+}
+
+.easy, .medium, .hard {
+	font-size: 40px;
+	cursor: pointer;
+	color: white; 
+	font-family: inherit;
+	width: 20rem;
+	color: black;
+	border-radius: 5px;
+}
+
+ .easy.selected, .medium.selected, .hard.selected {
+	color: black;
+  }
+  
+  .easy.selected {
+	background-color: rgb(43, 255, 0);
+  }
+
+  .medium.selected {
+	background-color: yellow;
+  }
+
+  .hard.selected {
+	background-color: rgb(255, 0, 0);
+  }
+
+.main-menu > input {
+	width: 27rem;
+	height :2rem;
+}
+
+#username {
+	font-size: 24px;
+	text-align: center;
+	font-family: inherit;
+}
+/*Dialog ruta*/
+.select-dialog {
+	display: flex;
+	flex-direction: column;
+	top: 30%;
+	left:40%;
+	padding: 4px;
+}
+
+.select-dialog > h2, p {
+	text-align: center;
+}
+
+.select-dialog button {
+	width: 4em;
+	align-self: center;
+	background-color: greenyellow;
+}
+  
+#error-username {
+	color: red;
+	padding: 12px;
+	display: none;
+}
+
+#error-level {
+	color: red;
+	padding: 12px;
+	display: none
+}
+
+
+
+
+
+

@@ -1,0 +1,370 @@
+@import url(https://fonts.googleapis.com/css2?family=Chewy&display=swap);
+
+/* Root variables for consistency */
+:root {
+    --font-family: "Chewy";
+    --font-size-base: 16px;
+    --game-bg-color: url('/images/background_664601-2392.avif');
+    --border-radius: 5px;
+    --btn-bg-hover: rgb(173, 159, 78);
+    --btn-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    --modal-bg-color: rgb(232, 234, 232);
+    --mistake-color: navy;
+    --btn-primary-bg: rgb(55, 222, 21);
+    --btn-secondary-bg: rgb(222, 21, 21);
+    --btn-hint-bg: rgb(255, 215, 0);
+    --modal-padding: 2em;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+}
+
+/* Game Container Styles */
+.game-container {
+    flex-direction: column;
+    border: 2px solid black;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    background-image: var(--game-bg-color);
+}
+
+.game {
+    width: 50vw;
+    padding: 1.25em;
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 2em;
+}
+
+.game-leaderboard-btn,
+.reset-btn,
+.quit-btn,
+#play-again-button,
+#quit-game-button,
+#hint-btn {
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: var(--font-family);
+}
+
+/* Game Leaderboard Button */
+.game-leaderboard-btn {
+	width: 7em;
+    background-color: rgb(167, 164, 164);
+    color: rgb(46, 37, 37);
+    padding: 0.7em;
+    font-size: 1rem;
+}
+
+.game-leaderboard-btn:hover {
+    background-color: #6e9e70;
+}
+
+/* Mode and Mistakes Positioning */
+.mode, .mistakes {
+    position: absolute;
+    font-weight: bold;
+}
+
+.mode {
+    left: 1em;
+}
+
+.mistakes {
+    right: 1em;
+    display: flex;
+    gap: 4px;
+    color: var(--mistake-color);
+}
+
+b {
+    color: green;
+}
+
+/* Hangman and Word Display Styles */
+.hangman {
+    text-align: center;
+}
+
+.hang-image {
+    max-width: 140px;
+    height: auto;
+}
+
+.word-display {
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+    flex-wrap: wrap;
+}
+
+.word-display li {
+    width: 1.5em;
+    height: 1.5em;
+    border-bottom: 2px solid black;
+    list-style: none;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Keyboard and Button Styles */
+.keyboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+button {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: white;
+    color: #4e4949;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    box-shadow: var(--btn-shadow);
+}
+
+button:hover {
+    background-color: var(--btn-bg-hover);
+}
+
+.game-control {
+    display: flex;
+    gap: 4em;
+    margin-bottom: 2em;
+}
+
+.reset-btn {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: var(--btn-primary-bg);
+    color: #4e4949;
+}
+
+.quit-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    padding: 1em;
+    background-color: var(--btn-secondary-bg);
+    color: #4e4949;
+}
+
+.reset-btn:hover {
+    background-color: rgb(44, 99, 52);
+    color: white;
+}
+
+.quit-btn:hover {
+    background-color: rgb(172, 16, 16);
+    color: white;
+}
+
+/* General Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Game Over Modal Styling */
+.game-over-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--modal-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: var(--modal-padding);
+    z-index: 100;
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
+    text-align: center;
+	align-items: center;
+    margin: 1em;
+    color: #000000;
+    padding: var(--modal-padding);
+    letter-spacing: 0.1em;
+}
+
+#play-again-button {
+    width: 6em;
+    height: 2.5em;
+    background-color: var(--btn-primary-bg);
+    color: #000000;
+    gap: 10em;
+    margin: 1em;
+}
+
+#play-again-button:hover {
+    background-color: rgb(44, 99, 52);
+    color: white;
+}
+
+#quit-game-button {
+    width: 5em;
+    height: 2.5em;
+    background-color: var(--btn-secondary-bg);
+    color: #131212;
+    margin: 1em;
+}
+
+#quit-game-button:hover {
+    background-color: rgb(172, 16, 16);
+    color: white;
+}
+
+#hint-btn {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: var(--btn-hint-bg);
+    color: #4e4949;
+    font-size: 1em;
+    font-weight: bold;
+    top: -2em;
+}
+
+#hint-btn:hover {
+    background-color: bisque;
+    color: white;
+}
+
+.game-info-container {
+	display: flex;
+	width: 50vw;
+	height: 5vh;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .game-container {
+        width: 80vw;
+        height: auto;
+        margin-top: 4em;
+    }
+
+    .game {
+        width: 100%;
+        padding: 1.25em;
+        gap: 2em;
+    }
+
+    .hang-image {
+        max-width: 120px;
+    }
+
+    button {
+        width: 2.8em;
+        height: 2.2em;
+    }
+
+    .game-control {
+        gap: 2em;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .word-display li {
+        width: 1.4em;
+        height: 1.4em;
+        font-size: 1.4rem;
+    }
+}
+
+/* @media (min-width: 768px) and (max-width: 1200px) {
+    .game-container {
+        width: 70vw;
+        height: auto;
+        margin-top: 3em;
+    } */
+
+    .game {
+        width: 95%;
+        padding: 1.5em;
+        gap: 2.5em;
+    }
+
+    .hang-image {
+        max-width: 130px;
+    }
+
+    .word-display li {
+        width: 1.5em;
+        height: 1.5em;
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 3em;
+        height: 2.5em;
+    }
+
+    .game-control {
+        gap: 3em;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 330px) {
+    body {
+        font-size: 12px;
+        padding: 0.5em;
+    }
+
+    .game-container {
+        width: 95vw;
+        margin-top: 1.5em;
+    }
+
+    .game {
+        padding: 0.75em;
+        gap: 1em;
+        margin-top: 2em;
+    }
+
+    .word-display li {
+        width: 0.8em;
+        height: 0.8em;
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 2em;
+        height: 1.8em;
+        font-size: 0.8em;
+    }
+
+    .game-control {
+        gap: 1em;
+        flex-direction: column;
+        align-items: center;
+    }
+}
