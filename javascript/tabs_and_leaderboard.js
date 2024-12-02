@@ -8,31 +8,6 @@ const LeaderboardGameButton = document.querySelector('.game-leaderboard-btn')
 const startButton = document.querySelector('.start')
 const gameContainer = document.querySelector(`.game-container`)
 const sortButtons = Array.from(document.querySelectorAll('.leaderboard-sort-button'))
-const leaderboardData = JSON.parse(localStorage.getItem('leaderboard')) || []
-
-// render leaderboard med function---
-
-function renderLeaderboard() {
-    const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || []
-    const leaderboardContainer = document.getElementById('leaderboard-list')
-    
-    // Clear the container before rendering
-    leaderboardContainer.innerHTML = ''
-
-    if (leaderboard.length === 0) {
-        leaderboardContainer.innerHTML = '<p>No leaderboard data available.</p>'
-        return
-    }
-
-    // Sort and render leaderboard
-    leaderboard.sort((a, b) => b.score - a.score)
-    leaderboard.forEach((entry, index) => {
-        const listItem = document.createElement('li')
-        listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score}`
-        leaderboardContainer.appendChild(listItem)
-    })
-}
-
 
 let previousTab = null
 
