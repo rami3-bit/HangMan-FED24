@@ -19,8 +19,15 @@
 	border-radius: 0.3em;
 }
 
+.leaderboard-closebtn-container {
+	display: flex;
+	width: 60vw;
+	justify-content: end;
+}
+
 .leaderboard-close-button {
-	align-self: flex-end;
+	width: 2em;
+	height: 2em;
 	background-color: rgb(236, 161, 161);
 	border-radius: 0.2em;
 
