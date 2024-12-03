@@ -4,7 +4,7 @@
 :root {
     --font-family: "Chewy";
     --font-size-base: 16px;
-    --game-bg-color: url('/images/background_664601-2392.avif');
+    --game-bg-color: url('images/background_664601-2392.avif');
     --border-radius: 5px;
     --btn-bg-hover: rgb(173, 159, 78);
     --btn-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
