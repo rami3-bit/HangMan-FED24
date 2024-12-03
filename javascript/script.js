@@ -252,20 +252,17 @@ document.addEventListener('keydown', (event) => {
 
 // -----------------local storage------------------------
 
-// --- Leaderboard hantering ---
-const MAX_LEADERBOARD_ENTRIES = 10; // Begränsa antalet poster till 10
+const MAX_LEADERBOARD_ENTRIES = 10 // Vi begränsar antalet poster till 10
 
-// Funktion för att hämta leaderboard från Local Storage eller skapa en ny om den inte finns
+// Här funktioner för att hämta leaderboard från Local Storage eller skapa en ny om den inte finns och spara data i local storage 
 function getLeaderboard() {
-    return JSON.parse(localStorage.getItem('leaderboard')) || [];
+    return JSON.parse(localStorage.getItem('leaderboard')) || []
 }
-
-// Funktion för att spara leaderboard till Local Storage
 function saveLeaderboard(leaderboard) {
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard))
 }
 
-// Skapar en ny leaderboard-post
+// Koden skapar ny leaderboard post
 function createLeaderboardEntry(playerName, mistakes, wordLength, timeTaken, date, status) {
     return {
         name: playerName,
@@ -274,57 +271,58 @@ function createLeaderboardEntry(playerName, mistakes, wordLength, timeTaken, dat
         time: timeTaken,
         date: new Date(date).toISOString(),
         status: status
-    };
+    }
 }
 
-// Sorterar leaderboard baserat på misstag, ordlängd och datum
+// Denna funktion sorterar leaderboard baserat på fel, ordlängd och datum
 function sortLeaderboard(leaderboard) {
     return leaderboard.sort((a, b) => {
         if (a.mistakes !== b.mistakes) {
-            return a.mistakes - b.mistakes; // Färre misstag först
+            return a.mistakes - b.mistakes // Mindre fel först
         } else if (a.wordLength !== b.wordLength) {
-            return b.wordLength - a.wordLength; // Längre ord först
+            return b.wordLength - a.wordLength // Längre ord först
         } else {
-            return new Date(a.date) - new Date(b.date); // Tidigare datum först
+            // return new Date(a.date) - new Date(b.date) // Tidigare datum först
+            return a.time - b.time // Snabbare tid först
         }
-    });
+    })
 }
 
-// Uppdaterar leaderboard och sparar det i Local Storage
+// uppdatera leaderboard och sparar i Local Storage
 function updateLeaderboard(playerName, mistakes, wordLength, timeTaken, date, status) {
-    const leaderboard = getLeaderboard();
+    const leaderboard = getLeaderboard()
 
-    // Skapa ny post och lägg till den i leaderboarden
-    const newEntry = createLeaderboardEntry(playerName, mistakes, wordLength, timeTaken, date, status);
-    leaderboard.push(newEntry);
+    // variabel som skapar ny post och lägg till den i leaderboarden
+    const newEntry = createLeaderboardEntry(playerName, mistakes, wordLength, timeTaken, date, status)
+    leaderboard.push(newEntry)
 
-    // Sortera leaderboarden och begränsa till de bästa 10
-    const sortedLeaderboard = sortLeaderboard(leaderboard);
-    const trimmedLeaderboard = sortedLeaderboard.slice(0, MAX_LEADERBOARD_ENTRIES);
+    // sortera leaderboarden och begränsa till de bästa 10
+    const sortedLeaderboard = sortLeaderboard(leaderboard)
+    const trimmedLeaderboard = sortedLeaderboard.slice(0, MAX_LEADERBOARD_ENTRIES)
 
-    // Spara den uppdaterade leaderboarden
-    saveLeaderboard(trimmedLeaderboard);
+    // spara uppdaterade leaderboarden
+    saveLeaderboard(trimmedLeaderboard)
 
-    // Visa uppdaterad leaderboard direkt
-    displayLeaderboard(trimmedLeaderboard);
+    // visa uppdaterad leaderboard direkt
+    displayLeaderboard(trimmedLeaderboard)
 }
 
 // Visa leaderboard i HTML
 function displayLeaderboard(leaderboard) {
-    const leaderboardList = document.querySelector('.leaderboard-list');
-    leaderboardList.innerHTML = ''; // Rensa tidigare lista
+    const leaderboardList = document.querySelector('.leaderboard-list')
+    leaderboardList.innerHTML = '' // rensa tidigare lista
 
     leaderboard.forEach(entry => {
-        const li = document.createElement('li');
-        li.textContent = `${entry.name}, mistakes: ${entry.mistakes}, word's length: ${entry.wordLength}, ${new Date(entry.date).toLocaleDateString()}, ${entry.time} sec, ${entry.status}`;
-        leaderboardList.appendChild(li);
-    });
+        const li = document.createElement('li')
+        li.textContent = `${entry.name}, mistakes: ${entry.mistakes}, word's length: ${entry.wordLength}, ${new Date(entry.date).toLocaleDateString()}, ${entry.time} sec, ${entry.status}`
+        leaderboardList.appendChild(li)
+    })
 
-    // Lägg till "Empty" poster om det finns färre än 10 resultat
+    // lägger till "Empty" poster om det finns färre än 10 resultat
     while (leaderboardList.children.length < MAX_LEADERBOARD_ENTRIES) {
-        const emptyLi = document.createElement('li');
-        emptyLi.textContent = 'Empty';
-        leaderboardList.appendChild(emptyLi);
+        const emptyLi = document.createElement('li')
+        emptyLi.textContent = 'Empty'
+        leaderboardList.appendChild(emptyLi)
     }
 }
 
@@ -335,8 +333,6 @@ window.addEventListener('load', () => {
 });
 
 // -------------------------------------------------------
-
-// Spelets funktioner (Exempel)
 
 // Initial Setup Calls
 createKeyboard();
