@@ -40,7 +40,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
+    margin-top: 1em;
     background-image: var(--game-bg-color);
 }
 
@@ -61,7 +61,7 @@ body {
 #play-again-button,
 #quit-game-button,
 #hint-btn {
-    border-radius: var(--border-radius);
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: var(--font-family);
@@ -74,6 +74,7 @@ body {
     color: rgb(46, 37, 37);
     padding: 0.7em;
     font-size: 1rem;
+    margin: 1em;
 }
 
 .game-leaderboard-btn:hover {
@@ -84,6 +85,8 @@ body {
 .mode, .mistakes {
     position: absolute;
     font-weight: bold;
+    top: 2.5em;
+    
 }
 
 .mode {
@@ -104,6 +107,7 @@ b {
 /* Hangman and Word Display Styles */
 .hangman {
     text-align: center;
+    margin-top: -5em;
 }
 
 .hang-image {
@@ -147,6 +151,8 @@ button {
     text-transform: uppercase;
     font-weight: bolder;
     box-shadow: var(--btn-shadow);
+    border-radius: 5px;
+    font-weight: bolder;
 }
 
 button:hover {
@@ -165,6 +171,7 @@ button:hover {
 	align-items: center;
     background-color: var(--btn-primary-bg);
     color: #4e4949;
+    width: 4em;
 }
 
 .quit-btn {
@@ -174,6 +181,7 @@ button:hover {
     padding: 1em;
     background-color: var(--btn-secondary-bg);
     color: #4e4949;
+    width: 4em;
 }
 
 .reset-btn:hover {
@@ -251,6 +259,7 @@ button:hover {
     font-size: 1em;
     font-weight: bold;
     top: -2em;
+    width: 4em;
 }
 
 #hint-btn:hover {
@@ -262,6 +271,31 @@ button:hover {
 	display: flex;
 	width: 50vw;
 	height: 5vh;
+}
+
+.game {
+    width: 95%;
+    padding: 1.5em;
+    gap: 2.5em;
+}
+
+.hang-image {
+    max-width: 130px;
+}
+
+.word-display li {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 1.5rem;
+}
+
+button {
+    width: 3em;
+    height: 2.5em;
+}
+
+.game-control {
+    gap: 3em;
 }
 
 /* Responsive Styles */
@@ -289,8 +323,7 @@ button:hover {
 
     .game-control {
         gap: 2em;
-        flex-direction: row;
-        justify-content: space-around;
+        
     }
 
     .word-display li {
@@ -300,30 +333,7 @@ button:hover {
     }
 }
 
-    .game {
-        width: 95%;
-        padding: 1.5em;
-        gap: 2.5em;
-    }
-
-    .hang-image {
-        max-width: 130px;
-    }
-
-    .word-display li {
-        width: 1.5em;
-        height: 1.5em;
-        font-size: 1.5rem;
-    }
-
-    button {
-        width: 3em;
-        height: 2.5em;
-    }
-
-    .game-control {
-        gap: 3em;
-    }
+   
 
 
 @media (min-width: 200px) and (max-width: 330px) {
@@ -340,7 +350,11 @@ button:hover {
     .game {
         padding: 0.75em;
         gap: 1em;
-        margin-top: 2em;
+        
+    }
+
+    .mode, .mistakes{
+        font-size: 0.7em;
     }
 
     .word-display li {
@@ -357,7 +371,80 @@ button:hover {
 
     .game-control {
         gap: 1em;
-        flex-direction: column;
-        align-items: center;
+       
+    }
+}
+@media (min-width: 331px) and (max-width: 679px) {
+    body {
+        font-size: 14px;
+        padding: 1em;
+    }
+
+    .game-container {
+        width: 90vw;
+        margin-top: 2em;
+    }
+
+    .game {
+        padding: 1em;
+        gap: 1.5em;
+        
+    }
+
+    .word {
+        margin-bottom: 1em;
+    }
+
+    .word-display li {
+        width: 1em;
+        height: 1em;
+        font-size: 1rem;
+    }
+
+    button {
+        width: 2.5em;
+        height: 2.2em;
+        font-size: 0.9em;
+    }
+
+    .keyboard {
+        gap: 0.4em;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .game-control {
+        gap: 1.5em;
+        
+    }
+
+    .modal-content {
+        padding: 1em;
+        font-size: 0.9rem;
+    }
+
+    #play-again-button, #quit-game-button {
+        width: 6em;
+        height: 2.5em;
+        font-size: 0.9rem;
+    }
+
+    .game-leaderboard-btn {
+
+        width: 8em;
+        height: 2.5em;
+        font-size: 0.7rem;
+    }
+
+    .mode, .mistakes{
+        font-size: 0.7em;
+    }
+
+    
+    .quit-btn,
+    #hint-btn {
+        width: 3em;
+        height: 2.5em;
+        font-size: 0.7rem;
     }
 }
